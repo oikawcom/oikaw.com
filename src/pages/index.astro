@@ -1,0 +1,69 @@
+---
+import ProjectCard from '../components/ProjectCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedProjects } from '../lib/projects';
+
+const projects = await getPublishedProjects();
+const roles = [...new Set(projects.flatMap(({ data }) => data.roles))].sort();
+---
+
+<BaseLayout
+  title="Projects — oikaw.com"
+  description="Selected projects and creative work by oikaw.com."
+>
+  <header class="page-intro">
+    <p class="eyebrow">Selected work</p>
+    <h1>Projects</h1>
+  </header>
+
+  <section class="project-browser" aria-labelledby="project-list-heading">
+    <h2 id="project-list-heading" class="visually-hidden">Project list</h2>
+    <div class="project-filters" aria-label="Filter projects by role">
+      <button type="button" data-project-filter="all" aria-pressed="true">All</button>
+      {
+        roles.map((role) => (
+          <button type="button" data-project-filter={role} aria-pressed="false">
+            {role}
+          </button>
+        ))
+      }
+    </div>
+    <p class="filter-status visually-hidden" data-filter-status aria-live="polite"></p>
+    <div class="project-grid" data-project-grid>
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+
+  <script>
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>(
+      '[data-project-filter]',
+    );
+    const projectCards = document.querySelectorAll<HTMLElement>('[data-project-card]');
+    const filterStatus = document.querySelector<HTMLElement>('[data-filter-status]');
+
+    for (const button of filterButtons) {
+      button.addEventListener('click', () => {
+        const selectedRole = button.dataset.projectFilter ?? 'all';
+        let visibleCount = 0;
+
+        for (const filterButton of filterButtons) {
+          filterButton.setAttribute(
+            'aria-pressed',
+            String(filterButton === button),
+          );
+        }
+
+        for (const card of projectCards) {
+          const roles = (card.dataset.roles ?? '').split('|');
+          const isVisible = selectedRole === 'all' || roles.includes(selectedRole);
+          card.hidden = !isVisible;
+          if (isVisible) visibleCount += 1;
+        }
+
+        if (filterStatus) {
+          filterStatus.textContent = `${visibleCount} project${visibleCount === 1 ? '' : 's'} shown`;
+        }
+      });
+    }
+  </script>
+</BaseLayout>

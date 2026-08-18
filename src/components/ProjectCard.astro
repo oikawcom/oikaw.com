@@ -1,0 +1,36 @@
+---
+import type { ProjectEntry } from '../lib/projects';
+
+interface Props {
+  project: ProjectEntry;
+}
+
+const { project } = Astro.props;
+const { title, year, context, roles, thumbnail } = project.data;
+---
+
+<article class="project-card" data-project-card data-roles={roles.join('|')}>
+  <a class="project-link" href={`/${project.id}`}>
+    <figure class="project-visual">
+      {
+        thumbnail ? (
+          <img
+            src={thumbnail.src}
+            alt={thumbnail.alt}
+            loading="lazy"
+            style={thumbnail.aspectRatio
+              ? `aspect-ratio: ${thumbnail.aspectRatio}`
+              : undefined}
+          />
+        ) : (
+          <div class="visual-placeholder" aria-hidden="true" />
+        )
+      }
+    </figure>
+    <div class="project-card-copy">
+      <h2>{title}</h2>
+      <p>{year} · {context}</p>
+      <p class="project-role">{roles.join(', ')}</p>
+    </div>
+  </a>
+</article>

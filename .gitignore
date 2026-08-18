@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+
+# Astro build and generated data
+dist/
+.astro/
+
+# local environment files
+.env
+.env.*
+!.env.example
+
+# editor and operating-system files
+.DS_Store
+Thumbs.db
+*.swp

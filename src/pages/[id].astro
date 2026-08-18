@@ -1,0 +1,119 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedProjects, type ProjectEntry } from '../lib/projects';
+
+export const getStaticPaths = (async () => {
+  const projects = await getPublishedProjects();
+
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  project: ProjectEntry;
+}
+
+const { project } = Astro.props;
+const {
+  title,
+  year,
+  context,
+  types,
+  roles,
+  techniques,
+  clientArtist,
+  series,
+  media,
+  descriptionJa,
+  descriptionEn,
+  credits,
+  seoTitle,
+  seoDescription,
+  ogImage,
+} = project.data;
+
+const metadata = [
+  ['Year', String(year)],
+  ['Context', context],
+  ['Client / Artist', clientArtist],
+  ['Role', roles.join(', ')],
+  ['Type', types.join(', ')],
+  ['Technique', techniques.length > 0 ? techniques.join(', ') : undefined],
+  ['Series / Collection', series],
+].filter((entry): entry is [string, string] => Boolean(entry[1]));
+---
+
+<BaseLayout
+  title={seoTitle ?? `${title} — oikaw.com`}
+  description={seoDescription ?? descriptionEn ?? descriptionJa ?? `${title}, ${year}`}
+  ogImage={ogImage}
+>
+  <article class="project-detail">
+    <header class="project-heading">
+      <p class="eyebrow">Project</p>
+      <h1>{title}</h1>
+    </header>
+
+    <dl class="project-metadata">
+      {
+        metadata.map(([label, value]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    {
+      (descriptionJa || descriptionEn) && (
+        <div class="project-descriptions">
+          {descriptionJa && <p lang="ja">{descriptionJa}</p>}
+          {descriptionEn && <p lang="en">{descriptionEn}</p>}
+        </div>
+      )
+    }
+
+    {
+      media.length > 0 && (
+        <section class="project-media" aria-label="Project media">
+          {media.map((item) => (
+            <figure>
+              {item.type === 'image' && item.src ? (
+                <img src={item.src} alt={item.alt ?? ''} loading="lazy" />
+              ) : (
+                <div
+                  class="media-placeholder"
+                  style={item.aspectRatio
+                    ? `aspect-ratio: ${item.aspectRatio}`
+                    : undefined}
+                  aria-hidden="true"
+                />
+              )}
+              {item.caption && <figcaption>{item.caption}</figcaption>}
+            </figure>
+          ))}
+        </section>
+      )
+    }
+
+    {
+      credits.length > 0 && (
+        <section class="project-credits" aria-labelledby="credits-heading">
+          <h2 id="credits-heading">Credits</h2>
+          <dl>
+            {credits.map(({ label, name }) => (
+              <div>
+                <dt>{label}</dt>
+                <dd>{name}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )
+    }
+  </article>
+</BaseLayout>
