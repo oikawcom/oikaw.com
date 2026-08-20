@@ -1,36 +1,83 @@
 import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { file } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-const mediaItem = z.object({
-  type: z.enum(['image', 'video', 'placeholder']),
-  src: z.string().optional(),
-  alt: z.string().optional(),
+const mediaValues = ['Video', 'Image', 'Sculpture', 'Other Media'] as const;
+const typeValues = [
+  'Music Video',
+  'Visualizer',
+  'Promo',
+  'Broadcast',
+  'Cover Art',
+  'Portrait',
+  'Photo',
+  'Logo',
+  'Other Type',
+] as const;
+const roleValues = [
+  'Direction',
+  'Production',
+  'Cinematography',
+  'Editing',
+  'Motion Design',
+  '3D',
+  'VFX',
+  'Art Direction',
+  'Graphic Design',
+  'Photography',
+  'Illustration',
+] as const;
+const techniqueValues = [
+  'Live Action',
+  'CGI',
+  'Animation',
+  'Design',
+  'Drawing',
+  'Physical',
+  'VR Modeling',
+  'Generative AI',
+  'Mixed Media',
+  'Other Technique',
+] as const;
+
+const imageAsset = z.object({
+  src: z.string().min(1),
+  alt: z.string().default(''),
+  caption: z.string().optional(),
+  aspectRatio: z.string().optional(),
+});
+
+const videoAsset = z.object({
+  src: z.string().min(1),
+  poster: z.string().optional(),
   caption: z.string().optional(),
   aspectRatio: z.string().optional(),
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/data/projects' }),
+  loader: file('src/data/projects.json'),
   schema: z.object({
+    id: z.string().min(1),
+    slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
     title: z.string().min(1),
-    year: z.union([z.number().int(), z.string().min(1)]),
-    context: z.enum(['Client', 'Personal']),
-    types: z.array(z.string().min(1)).min(1),
-    roles: z.array(z.string().min(1)).min(1),
-    techniques: z.array(z.string().min(1)).default([]),
+    year: z.number().int().min(1900).max(2100).optional(),
+    media: z.enum(mediaValues),
+    type: z.enum(typeValues),
+    roles: z.array(z.enum(roleValues)).default([]),
+    techniques: z.array(z.enum(techniqueValues)).default([]),
+    context: z.enum(['Client', 'Personal']).optional(),
+    scope: z.literal('solo-production').optional(),
     clientArtist: z.string().optional(),
-    series: z.string().optional(),
+    seriesCollection: z.string().optional(),
+    explicitRelatedProjects: z.array(z.string().min(1)).default([]),
+    legacyPaths: z.array(z.string().startsWith('/')).min(1),
+    initialReleaseScope: z.boolean(),
+    publicationStatus: z.enum(['published', 'draft']).optional(),
     featured: z.boolean().default(false),
     priority: z.number().int().default(0),
-    thumbnail: z
-      .object({
-        src: z.string(),
-        alt: z.string(),
-        aspectRatio: z.string().optional(),
-      })
-      .optional(),
-    media: z.array(mediaItem).default([]),
+    thumbnail: imageAsset.optional(),
+    images: z.array(imageAsset).default([]),
+    video: videoAsset.optional(),
     descriptionJa: z.string().optional(),
     descriptionEn: z.string().optional(),
     credits: z
@@ -44,8 +91,6 @@ const projects = defineCollection({
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
     ogImage: z.string().optional(),
-    legacyPaths: z.array(z.string()).default([]),
-    draft: z.boolean(),
   }),
 });
 

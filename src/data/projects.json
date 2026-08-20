@@ -1,0 +1,1557 @@
+[
+  {
+    "id": "project-06-emitter",
+    "slug": "06-emitter",
+    "title": "06 Emitter",
+    "media": "Sculpture",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "seriesCollection": "VR Sculpture",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/06-emitter"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-07-luck",
+    "slug": "07-luck",
+    "title": "07 Luck",
+    "media": "Sculpture",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "seriesCollection": "VR Sculpture",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/07-luck"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-08-daydream",
+    "slug": "08-daydream",
+    "title": "08 Daydream",
+    "media": "Sculpture",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "seriesCollection": "VR Sculpture",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/08-daydream"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2020-01",
+    "slug": "4s4ki-yourdreamland",
+    "title": "おまえのドリームランド (Your Dreamland)",
+    "year": 2020,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [
+      "project-4s4ki-mvs-2020-01"
+    ],
+    "legacyPaths": [
+      "/4s4ki-artwork-2020",
+      "/4s4ki-yourdreamland"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2020-02",
+    "slug": "4s4ki-nemnem-remix",
+    "title": "NEMNEM REMIX EP",
+    "year": 2020,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-artwork-2020",
+      "/4s4ki-nemnem-remix"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2020-03",
+    "slug": "4s4ki-masayoshi-iimori",
+    "title": "遺影にイェーイ",
+    "year": 2020,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki, Masayoshi Iimori",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-artwork-2020",
+      "/4s4ki-masayoshi-iimori"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2021-01",
+    "slug": "fairytale-cover-art",
+    "title": "FAIRYTALE feat. Zheani",
+    "year": 2021,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [
+      "project-4s4ki-mvs-2021-1st-01"
+    ],
+    "legacyPaths": [
+      "/4s4ki-artwork-2021",
+      "/4s4ki-singles-2021"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2021-02",
+    "slug": "gemstone-cover-art",
+    "title": "gemstone feat. Puppet",
+    "year": 2021,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [
+      "project-4s4ki-mvs-2021-1st-02"
+    ],
+    "legacyPaths": [
+      "/4s4ki-artwork-2021",
+      "/4s4ki-singles-2021"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2021-03",
+    "slug": "alice-cover-art",
+    "title": "ALICE feat. Smrtdeath",
+    "year": 2021,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [
+      "project-4s4ki-mvs-2021-1st-03"
+    ],
+    "legacyPaths": [
+      "/4s4ki-artwork-2021",
+      "/4s4ki-singles-2021"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2022-01",
+    "slug": "portrait-4s4ki-2022",
+    "title": "Portrait of 4s4ki 2022",
+    "year": 2022,
+    "media": "Image",
+    "type": "Portrait",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-artwork-2022"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2022-02",
+    "slug": "log-out-cover-art",
+    "title": "LOG OUT",
+    "year": 2022,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [
+      "project-4s4ki-mvs-2022-2nd-01"
+    ],
+    "legacyPaths": [
+      "/4s4ki-artwork-2022"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-artwork-2022-03",
+    "slug": "freedom-kingdom",
+    "title": "Freedom Kingdom feat. Swervy",
+    "year": 2022,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Art Works",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-artwork-2022"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-chouhametsuteki",
+    "slug": "4s4ki-chouhametsuteki",
+    "title": "超破滅的思考",
+    "year": 2019,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki",
+      "/4s4ki-chouhametsuteki"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-h-o-h-01",
+    "slug": "here-or-heaven",
+    "title": "Here or Heaven",
+    "year": 2021,
+    "media": "Image",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "Here or Heaven / Here or Hell",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-h-o-h"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-h-o-h-02",
+    "slug": "here-or-hell",
+    "title": "Here or Hell",
+    "year": 2022,
+    "media": "Image",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "Here or Heaven / Here or Hell",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-h-o-h"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2020-01",
+    "slug": "your-dreamland-music-video",
+    "title": "おまえのドリームランド",
+    "year": 2020,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action",
+      "CGI"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [
+      "project-4s4ki-artwork-2020-01"
+    ],
+    "legacyPaths": [
+      "/4s4ki-mvs-2020"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2020-02",
+    "slug": "i-love-me",
+    "title": "I LOVE ME",
+    "year": 2020,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing",
+      "Graphic Design"
+    ],
+    "techniques": [
+      "Live Action",
+      "CGI",
+      "Design"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2020"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2020-03",
+    "slug": "35-5",
+    "title": "35.5",
+    "year": 2020,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2020"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2020-04",
+    "slug": "chronicle",
+    "title": "クロニクル",
+    "year": 2020,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2020"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2021-1st-01",
+    "slug": "fairytale-music-video",
+    "title": "FAIRYTALE feat. Zheani",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [
+      "project-4s4ki-artwork-2021-01"
+    ],
+    "legacyPaths": [
+      "/4s4ki-mvs-2021-1st"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2021-1st-02",
+    "slug": "gemstone-music-video",
+    "title": "gemstone feat. Puppet",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing",
+      "Graphic Design"
+    ],
+    "techniques": [
+      "Live Action",
+      "CGI",
+      "Design"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [
+      "project-4s4ki-artwork-2021-02"
+    ],
+    "legacyPaths": [
+      "/4s4ki-mvs-2021-1st"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2021-1st-03",
+    "slug": "alice-music-video",
+    "title": "ALICE feat. Smrtdeath",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [
+      "project-4s4ki-artwork-2021-03"
+    ],
+    "legacyPaths": [
+      "/4s4ki-mvs-2021-1st"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2021-1st-04",
+    "slug": "44-seconds",
+    "title": "44 seconds",
+    "year": 2021,
+    "media": "Video",
+    "type": "Visualizer",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2021-1st"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2021-2nd-01",
+    "slug": "star-player",
+    "title": "STAR PLAYER",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2021-2nd"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2021-2nd-02",
+    "slug": "m-e-l-t",
+    "title": "m e l t",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2021-2nd"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2021-2nd-03",
+    "slug": "obon",
+    "title": "OBON",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2021-2nd"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2021-2nd-04",
+    "slug": "space-coaster",
+    "title": "space coaster",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action",
+      "CGI"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2021-2nd"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2022-1st-01",
+    "slug": "blackhole",
+    "title": "ブラックホール",
+    "year": 2022,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing",
+      "Photography"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2022-1st"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2022-1st-02",
+    "slug": "0h-g0d",
+    "title": "0h G0D!!",
+    "year": 2022,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing",
+      "Illustration"
+    ],
+    "techniques": [
+      "Live Action",
+      "Drawing"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2022-1st"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2022-2nd-01",
+    "slug": "log-out-music-video",
+    "title": "LOG OUT",
+    "year": 2022,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing",
+      "3D"
+    ],
+    "techniques": [
+      "Live Action",
+      "CGI",
+      "VR Modeling"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [
+      "project-4s4ki-artwork-2022-02"
+    ],
+    "legacyPaths": [
+      "/4s4ki-mvs-2022-2nd"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-2022-2nd-02",
+    "slug": "cyberspace",
+    "title": "電脳郷",
+    "year": 2022,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing",
+      "3D"
+    ],
+    "techniques": [
+      "Live Action",
+      "CGI",
+      "Generative AI"
+    ],
+    "clientArtist": "4s4ki",
+    "seriesCollection": "4s4ki Music Videos",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-2022-2nd"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-undeadcyborg-01",
+    "slug": "megajokki",
+    "title": "☆メガジョッキ☆",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "4s4ki",
+    "seriesCollection": "UNDEAD CYBORG",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-undeadcyborg"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-undeadcyborg-02",
+    "slug": "sugar-junky",
+    "title": "Sugar Junky",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "4s4ki",
+    "seriesCollection": "UNDEAD CYBORG",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-undeadcyborg"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-undeadcyborg-03",
+    "slug": "reimen",
+    "title": "REIMEN",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "4s4ki",
+    "seriesCollection": "UNDEAD CYBORG",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-undeadcyborg"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-4s4ki-mvs-undeadcyborg-04",
+    "slug": "happiness-theory",
+    "title": "幸福論",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "4s4ki",
+    "seriesCollection": "UNDEAD CYBORG",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/4s4ki-mvs-undeadcyborg"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-as-01",
+    "slug": "as-01",
+    "title": "01 Power",
+    "media": "Sculpture",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "seriesCollection": "VR Sculpture",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/as-01"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-as-02",
+    "slug": "as-02",
+    "title": "02 Feeler",
+    "media": "Sculpture",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "seriesCollection": "VR Sculpture",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/as-02"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-as-03",
+    "slug": "as-03",
+    "title": "03 Harvest",
+    "media": "Sculpture",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "seriesCollection": "VR Sculpture",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/as-03"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-as-04",
+    "slug": "as-04",
+    "title": "04 Greed",
+    "media": "Sculpture",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "seriesCollection": "VR Sculpture",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/as-04"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-as-05",
+    "slug": "as-05",
+    "title": "05 Devotion",
+    "media": "Sculpture",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [
+      "CGI",
+      "VR Modeling"
+    ],
+    "seriesCollection": "VR Sculpture",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/as-05"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-asiwc-coco",
+    "slug": "asiwc-coco",
+    "title": "COCO de KIMEL",
+    "year": 2016,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "ASIWC (A SHEEP IN WOLF’S CLOTHING)",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/asiwc-coco"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-asiwc-dekill",
+    "slug": "asiwc-dekill",
+    "title": "DeKiLL",
+    "year": 2018,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "ASIWC (A SHEEP IN WOLF’S CLOTHING)",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/asiwc-dekill"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-asiwc-maria-gucci",
+    "slug": "asiwc-maria-gucci",
+    "title": "MARIA GUCCI",
+    "year": 2016,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "ASIWC (A SHEEP IN WOLF’S CLOTHING)",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/asiwc-maria-gucci"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-beauty-battlers",
+    "slug": "beauty-battlers",
+    "title": "Beauty Battlers",
+    "year": 2019,
+    "media": "Image",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [],
+    "context": "Personal",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/beauty-battlers"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-bycatch",
+    "slug": "bycatch",
+    "title": "混獲 -BYCATCH-",
+    "year": 2018,
+    "media": "Video",
+    "type": "Promo",
+    "roles": [
+      "Direction"
+    ],
+    "techniques": [],
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/bycatch"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-chuuichi-shouben",
+    "slug": "chuuichi-shouben",
+    "title": "小便",
+    "year": 2016,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "中華一番",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/chuuichi-shouben"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-chuuichi-theme",
+    "slug": "chuuichi-theme",
+    "title": "中華一番のテーマ",
+    "year": 2014,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "中華一番",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/chuuichi-theme"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-dopinglife",
+    "slug": "dopinglife",
+    "title": "Doping Life",
+    "year": 2018,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "TORIENA",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/dopinglife"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-dotama-honne",
+    "slug": "dotama-honne",
+    "title": "本音",
+    "year": 2018,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "DOTAMA feat. 般若",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/dotama-honne"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-emily-2023",
+    "slug": "emily-2023",
+    "title": "Emily 2023",
+    "year": 2023,
+    "media": "Image",
+    "type": "Photo",
+    "roles": [],
+    "techniques": [],
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/emily-2023"
+    ],
+    "initialReleaseScope": false
+  },
+  {
+    "id": "project-gasface-fxxk-me",
+    "slug": "gasface-fxxk-me",
+    "title": "Fxxk Me, Training Days",
+    "year": 2016,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [],
+    "techniques": [],
+    "scope": "solo-production",
+    "clientArtist": "GASFACE",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/gasface-fxxk-me"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-gasface-item",
+    "slug": "gasface-item",
+    "title": "ITEM",
+    "year": 2016,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "GASFACE",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/gasface-item"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-kerala-to-kathmandu-2017",
+    "slug": "kerala-to-kathmandu-2017",
+    "title": "\"Kerala to Kathmandu\" 2017",
+    "year": 2017,
+    "media": "Image",
+    "type": "Photo",
+    "roles": [],
+    "techniques": [],
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/india-2017-1-2",
+      "/india-2017-2-2"
+    ],
+    "initialReleaseScope": false
+  },
+  {
+    "id": "project-klooz-seasons-01",
+    "slug": "find-you",
+    "title": "Find You (Prod. by Seiho)",
+    "year": 2013,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "KLOOZ",
+    "seriesCollection": "SEASONS",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/klooz-seasons"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-klooz-seasons-02",
+    "slug": "you-are",
+    "title": "You Are... (Prod. by grooveman Spot)",
+    "year": 2013,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "KLOOZ",
+    "seriesCollection": "SEASONS",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/klooz-seasons"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-klooz-seasons-03",
+    "slug": "lack-of-communication",
+    "title": "Lack of Communication (Prod. by grooveman Spot)",
+    "year": 2013,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "KLOOZ",
+    "seriesCollection": "SEASONS",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/klooz-seasons"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-lazy",
+    "slug": "lazy",
+    "title": "LAZYgunsBRISKY Teaser Movie",
+    "year": 2018,
+    "media": "Video",
+    "type": "Promo",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "LAZYgunsBRISKY",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/lazy"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-lex-album",
+    "slug": "lex-album",
+    "title": "!!!",
+    "year": 2019,
+    "media": "Image",
+    "type": "Cover Art",
+    "roles": [
+      "Graphic Design"
+    ],
+    "techniques": [
+      "CGI",
+      "Design"
+    ],
+    "clientArtist": "LEX",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/lex-album"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-lex-star",
+    "slug": "lex-star",
+    "title": "STAR",
+    "year": 2019,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Editing"
+    ],
+    "techniques": [
+      "CGI"
+    ],
+    "clientArtist": "LEX",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/lex-star",
+      "/star"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-maeshima-bloom-swipe",
+    "slug": "maeshima-bloom-swipe",
+    "title": "Swipe",
+    "year": 2021,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "maeshima soshi & BLOOM VASE",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/maeshima-bloom-swipe"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-maeshimasoshi",
+    "slug": "maeshimasoshi",
+    "title": "Portrait of maeshima soshi",
+    "year": 2021,
+    "media": "Image",
+    "type": "Portrait",
+    "roles": [],
+    "techniques": [
+      "Animation",
+      "Drawing"
+    ],
+    "clientArtist": "maeshima soshi",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/maeshimasoshi"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-majorminor",
+    "slug": "majorminor",
+    "title": "MAJOR-MINOR",
+    "year": 2019,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Editing"
+    ],
+    "techniques": [
+      "CGI"
+    ],
+    "clientArtist": "NOISEMAKER",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/majorminor"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-mflo-chelmico-runaways",
+    "slug": "mflo-chelmico-runaways",
+    "title": "RUN AWAYS",
+    "year": 2020,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "3D",
+      "Cinematography"
+    ],
+    "techniques": [
+      "CGI",
+      "Live Action"
+    ],
+    "clientArtist": "m-flo♡chelmico",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/mflo-chelmico-runaways"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-mojimo-game",
+    "slug": "mojimo-game",
+    "title": "mojimo game",
+    "year": 2018,
+    "media": "Image",
+    "type": "Other Type",
+    "roles": [],
+    "techniques": [],
+    "context": "Client",
+    "clientArtist": "Fontworks",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/mojimo-game"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-monster-rion-message",
+    "slug": "monster-rion-message",
+    "title": "Message",
+    "year": 2018,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "Monster Rion feat. Taichi Mukai",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/monster-rion-message"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-monster-rion-secret",
+    "slug": "monster-rion-secret",
+    "title": "Secret Dancehall feat. IO, YOUNG JUJU & Thelma Aoyama",
+    "year": 2018,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "CGI",
+      "Live Action"
+    ],
+    "clientArtist": "Monster Rion (SONPUB & The BK Sound)",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/monster-rion-secret"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-monster-riot",
+    "slug": "monster-riot",
+    "title": "Monster Riot feat. Jinmenusagi",
+    "year": 2016,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "CGI",
+      "Live Action"
+    ],
+    "clientArtist": "Monster Rion (SONPUB & The BK Sound)",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/monster-riot"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-portrait-4s4ki-2020",
+    "slug": "portrait-4s4ki-2020",
+    "title": "Portrait of 4s4ki 2020",
+    "year": 2020,
+    "media": "Image",
+    "type": "Portrait",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "4s4ki",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/portrait-4s4ki",
+      "/portrait-4s4ki-2020"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-portrait-satoru-kawaguchi",
+    "slug": "portrait-satoru-kawaguchi",
+    "title": "Portrait of Satoru Kawaguchi",
+    "year": 2019,
+    "media": "Image",
+    "type": "Portrait",
+    "roles": [],
+    "techniques": [
+      "Mixed Media"
+    ],
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/portrait-satoru-kawaguchi",
+      "/portrait-sk"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-sexgame",
+    "slug": "sexgame",
+    "title": "SEXGAME",
+    "year": 2018,
+    "media": "Video",
+    "type": "Music Video",
+    "roles": [
+      "Direction",
+      "Cinematography",
+      "Editing"
+    ],
+    "techniques": [
+      "Live Action"
+    ],
+    "clientArtist": "the hatch",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/sexgame"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-tentere-ending-2018",
+    "slug": "tentere-ending-2018",
+    "title": "NHK Eテレ「天才てれびくんYOU」エンディング",
+    "year": 2018,
+    "media": "Video",
+    "type": "Broadcast",
+    "roles": [
+      "Direction",
+      "Editing"
+    ],
+    "techniques": [
+      "CGI"
+    ],
+    "clientArtist": "NHK Eテレ",
+    "seriesCollection": "天才てれびくん エンディング",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/tentere-ending"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-tentere-ending-2019",
+    "slug": "tentere-ending-2019",
+    "title": "NHK Eテレ「天才てれびくんYOU」エンディング",
+    "year": 2019,
+    "media": "Video",
+    "type": "Broadcast",
+    "roles": [
+      "Direction",
+      "Editing"
+    ],
+    "techniques": [
+      "CGI"
+    ],
+    "clientArtist": "NHK Eテレ",
+    "seriesCollection": "天才てれびくん エンディング",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/tentere-ending"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-tentere-ending-2020",
+    "slug": "tentere-ending-2020",
+    "title": "NHK Eテレ「天才てれびくんhello」エンディング",
+    "year": 2020,
+    "media": "Video",
+    "type": "Broadcast",
+    "roles": [
+      "Direction",
+      "Editing"
+    ],
+    "techniques": [
+      "CGI"
+    ],
+    "clientArtist": "NHK Eテレ",
+    "seriesCollection": "天才てれびくん エンディング",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/tentere-ending"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-tentere-ending-2021",
+    "slug": "tentere-ending-2021",
+    "title": "NHK Eテレ「天才てれびくんhello」エンディング",
+    "year": 2021,
+    "media": "Video",
+    "type": "Broadcast",
+    "roles": [
+      "Direction",
+      "Editing",
+      "3D"
+    ],
+    "techniques": [
+      "CGI",
+      "Animation"
+    ],
+    "clientArtist": "NHK Eテレ",
+    "seriesCollection": "天才てれびくん エンディング",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/tentere-ending"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-tentere-ending-2022",
+    "slug": "tentere-ending-2022",
+    "title": "NHK Eテレ「天才てれびくんhello」エンディング",
+    "year": 2022,
+    "media": "Video",
+    "type": "Broadcast",
+    "roles": [],
+    "techniques": [],
+    "clientArtist": "NHK Eテレ",
+    "seriesCollection": "天才てれびくん エンディング",
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/tentere-ending"
+    ],
+    "initialReleaseScope": true
+  },
+  {
+    "id": "project-thai-2016",
+    "slug": "thai-2016",
+    "title": "\"タイ ประเทศไทย Thailand\" 2016",
+    "year": 2016,
+    "media": "Image",
+    "type": "Photo",
+    "roles": [],
+    "techniques": [],
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/thai-2016"
+    ],
+    "initialReleaseScope": false
+  },
+  {
+    "id": "project-tsuru-to-kame",
+    "slug": "tsuru-to-kame",
+    "title": "[鶴と亀 禄] パンチライン CGビジュアル",
+    "year": 2017,
+    "media": "Image",
+    "type": "Other Type",
+    "roles": [
+      "3D"
+    ],
+    "techniques": [
+      "CGI"
+    ],
+    "explicitRelatedProjects": [],
+    "legacyPaths": [
+      "/lex",
+      "/tsuru-to-kame"
+    ],
+    "initialReleaseScope": true
+  }
+]

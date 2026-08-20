@@ -10,7 +10,7 @@ const { title, year, context, roles, thumbnail } = project.data;
 ---
 
 <article class="project-card" data-project-card data-roles={roles.join('|')}>
-  <a class="project-link" href={`/${project.id}`}>
+  <a class="project-link" href={`/${project.data.slug}`}>
     <figure class="project-visual">
       {
         thumbnail ? (
@@ -29,8 +29,8 @@ const { title, year, context, roles, thumbnail } = project.data;
     </figure>
     <div class="project-card-copy">
       <h2>{title}</h2>
-      <p>{year} · {context}</p>
-      <p class="project-role">{roles.join(', ')}</p>
+      {(year || context) && <p>{[year, context].filter(Boolean).join(' · ')}</p>}
+      {roles.length > 0 && <p class="project-role">{roles.join(', ')}</p>}
     </div>
   </a>
 </article>

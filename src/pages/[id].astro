@@ -1,13 +1,13 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getPublishedProjects, type ProjectEntry } from '../lib/projects';
+import { getAllProjects, type ProjectEntry } from '../lib/projects';
 
 export const getStaticPaths = (async () => {
-  const projects = await getPublishedProjects();
+  const projects = await getAllProjects();
 
   return projects.map((project) => ({
-    params: { id: project.id },
+    params: { id: project.data.slug },
     props: { project },
   }));
 }) satisfies GetStaticPaths;
@@ -20,13 +20,15 @@ const { project } = Astro.props;
 const {
   title,
   year,
+  media: mediaCategory,
+  type,
   context,
-  types,
   roles,
   techniques,
   clientArtist,
-  series,
-  media,
+  seriesCollection,
+  images,
+  video,
   descriptionJa,
   descriptionEn,
   credits,
@@ -36,19 +38,23 @@ const {
 } = project.data;
 
 const metadata = [
-  ['Year', String(year)],
+  ['Year', year ? String(year) : undefined],
+  ['Media', mediaCategory],
+  ['Type', type],
   ['Context', context],
   ['Client / Artist', clientArtist],
-  ['Role', roles.join(', ')],
-  ['Type', types.join(', ')],
+  ['Role', roles.length > 0 ? roles.join(', ') : undefined],
   ['Technique', techniques.length > 0 ? techniques.join(', ') : undefined],
-  ['Series / Collection', series],
+  ['Series / Collection', seriesCollection],
 ].filter((entry): entry is [string, string] => Boolean(entry[1]));
 ---
 
 <BaseLayout
   title={seoTitle ?? `${title} — oikaw.com`}
-  description={seoDescription ?? descriptionEn ?? descriptionJa ?? `${title}, ${year}`}
+  description={seoDescription ??
+    descriptionEn ??
+    descriptionJa ??
+    (year ? `${title}, ${year}` : title)}
   ogImage={ogImage}
 >
   <article class="project-detail">
@@ -78,21 +84,30 @@ const metadata = [
     }
 
     {
-      media.length > 0 && (
+      (images.length > 0 || video) && (
         <section class="project-media" aria-label="Project media">
-          {media.map((item) => (
+          {video && (
             <figure>
-              {item.type === 'image' && item.src ? (
-                <img src={item.src} alt={item.alt ?? ''} loading="lazy" />
-              ) : (
-                <div
-                  class="media-placeholder"
-                  style={item.aspectRatio
-                    ? `aspect-ratio: ${item.aspectRatio}`
-                    : undefined}
-                  aria-hidden="true"
-                />
-              )}
+              <video
+                controls
+                poster={video.poster}
+                style={video.aspectRatio
+                  ? `aspect-ratio: ${video.aspectRatio}`
+                  : undefined}
+              >
+                <source src={video.src} />
+              </video>
+              {video.caption && <figcaption>{video.caption}</figcaption>}
+            </figure>
+          )}
+          {images.map((item) => (
+            <figure>
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                style={item.aspectRatio ? `aspect-ratio: ${item.aspectRatio}` : undefined}
+              />
               {item.caption && <figcaption>{item.caption}</figcaption>}
             </figure>
           ))}
