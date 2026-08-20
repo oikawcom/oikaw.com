@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { sortProjects } from './works-filter.mjs';
 
 export type ProjectEntry = CollectionEntry<'projects'>;
 
@@ -76,16 +77,16 @@ export async function getPublishedProjects(): Promise<ProjectEntry[]> {
   const projects = (await getAllProjects()).filter(
     ({ data }) => data.initialReleaseScope && data.publicationStatus !== 'draft',
   );
+  const projectOrder = new Map(
+    sortProjects(
+      projects.map(({ data }) => data),
+      'newest',
+    ).map(({ id }, index) => [id, index]),
+  );
 
-  return projects.sort((a, b) => {
-    if (a.data.featured !== b.data.featured) {
-      return Number(b.data.featured) - Number(a.data.featured);
-    }
-
-    if (a.data.priority !== b.data.priority) {
-      return b.data.priority - a.data.priority;
-    }
-
-    return a.data.slug.localeCompare(b.data.slug);
-  });
+  return projects.sort(
+    (left, right) =>
+      (projectOrder.get(left.data.id) ?? 0) -
+      (projectOrder.get(right.data.id) ?? 0),
+  );
 }

@@ -5,12 +5,14 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  activeNav?: 'works' | 'profile';
 }
 
 const {
   title = 'oikaw.com',
   description = 'Selected projects and creative work.',
   ogImage,
+  activeNav,
 } = Astro.props;
 ---
 
@@ -23,21 +25,100 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {ogImage && <meta property="og:image" content={ogImage} />}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+    />
     <title>{title}</title>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
-        <a class="site-identity" href="/" aria-label="oikaw.com home">oikaw.com</a>
+        <div class="sidebar-brand">
+          <a class="site-identity" href="/" aria-label="oikaw.com home">
+            <img
+              class="oikawa-logo"
+              src="/assets/branding/oikawa-logo.svg"
+              alt=""
+              width="1000"
+              height="746"
+            />
+          </a>
+          <p class="site-discipline">|| Director, Visual Artist ||</p>
+          <a
+            class="deepdeal-link"
+            href="https://deepdeal.oikaw.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="deepdeal"
+            data-deepdeal-link
+          >
+            <span class="deepdeal-eye" aria-hidden="true">
+              <img
+                class="deepdeal-eye-open"
+                src="/assets/branding/deepdeal-eye-open.svg"
+                alt=""
+                width="1000"
+                height="320"
+              />
+              <img
+                class="deepdeal-eye-closed"
+                src="/assets/branding/deepdeal-eye-closed.svg"
+                alt=""
+                width="1000"
+                height="320"
+              />
+            </span>
+          </a>
+        </div>
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="/">Projects</a>
-          <a href="/contact">Contact</a>
+          <a
+            class:list={['site-nav-link', { 'is-active': activeNav === 'profile' }]}
+            href="/contact"
+            aria-current={activeNav === 'profile' ? 'page' : undefined}
+          >
+            YUSUKE OIKAWA
+          </a>
+          <a
+            class:list={['site-nav-link', { 'is-active': activeNav === 'works' }]}
+            href="/"
+            aria-current={activeNav === 'works' ? 'page' : undefined}
+          >
+            WORKS
+          </a>
         </nav>
+        <div class="sidebar-content">
+          <slot name="sidebar" />
+        </div>
       </header>
       <main id="main-content" class="site-main">
         <slot />
       </main>
     </div>
+
+    <script>
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      for (const link of document.querySelectorAll<HTMLElement>('[data-deepdeal-link]')) {
+        let blinkTimer: number | undefined;
+
+        const blinkOnce = () => {
+          if (reducedMotion.matches || link.classList.contains('is-blinking')) return;
+          link.classList.add('is-blinking');
+          window.clearTimeout(blinkTimer);
+          blinkTimer = window.setTimeout(() => {
+            link.classList.remove('is-blinking');
+          }, 200);
+        };
+
+        link.addEventListener('mouseenter', blinkOnce);
+        link.addEventListener('pointerdown', (event) => {
+          if (event.pointerType !== 'mouse') blinkOnce();
+        });
+      }
+    </script>
   </body>
 </html>

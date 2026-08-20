@@ -1,0 +1,88 @@
+---
+import {
+  createEmptySelection,
+  filterGroups,
+  prospectiveCount,
+} from '../lib/works-filter.mjs';
+
+interface FilterProject {
+  id: string;
+  slug: string;
+  year?: number;
+  media: string;
+  type: string;
+  roles: string[];
+  techniques: string[];
+  context?: string;
+  scope?: string;
+  clientArtist?: string;
+}
+
+interface Props {
+  projects: FilterProject[];
+}
+
+const { projects } = Astro.props;
+const emptySelection = createEmptySelection();
+---
+
+<section class="works-filter" aria-labelledby="works-filter-heading" data-filter-root>
+  <h2 id="works-filter-heading" class="visually-hidden">Filter works</h2>
+  <div class="filter-scroll-frame">
+    <div
+      class="filter-scroll-region"
+      tabindex="0"
+      aria-label="Project filters"
+      data-filter-scroll
+    >
+      {
+        filterGroups.map(({ key, label, values }) => {
+          const panelId = `filter-panel-${key}`;
+
+          return (
+            <section class="filter-group" data-filter-group={key}>
+              <h3>
+                <button
+                  class="filter-group-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls={panelId}
+                  data-filter-toggle
+                >
+                  <span aria-hidden="true" data-filter-symbol>+</span>
+                  {label}
+                </button>
+              </h3>
+              <div class="filter-tag-list" id={panelId} hidden data-filter-panel>
+                {values.map((value) => {
+                  const count = prospectiveCount(
+                    projects,
+                    emptySelection,
+                    key,
+                    value,
+                  );
+
+                  return (
+                    <button
+                      class="filter-tag"
+                      type="button"
+                      aria-pressed="false"
+                      disabled={count === 0}
+                      data-filter-tag
+                      data-category={key}
+                      data-value={value}
+                    >
+                      <span class="filter-tag-count" data-filter-count>{count}</span>
+                      <span>{value}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })
+      }
+    </div>
+    <div class="filter-scroll-fade" aria-hidden="true" data-filter-fade></div>
+  </div>
+</section>

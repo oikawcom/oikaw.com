@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "check": "astro check",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "verify:filters": "node scripts/verify-works-filter.mjs"
   },
   "engines": {
     "node": ">=22.12.0"

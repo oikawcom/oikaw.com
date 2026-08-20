@@ -1,0 +1,30 @@
+---
+interface Props {
+  context?: 'works' | 'detail';
+}
+
+const { context = 'works' } = Astro.props;
+---
+
+<div
+  class:list={['filter-tray', `filter-tray--${context}`]}
+  aria-live="polite"
+  data-filter-tray
+>
+  <button class="apply-button" type="button" hidden data-apply-button>
+    APPLY
+  </button>
+  <button
+    class="selected-button"
+    type="button"
+    aria-label="Selected: All Works"
+    disabled
+    data-selected-button
+  >
+    <span class="selected-default">SELECTED</span>
+    <span class="selected-clear" aria-hidden="true">CLEAR<br />ALL</span>
+  </button>
+  <div class="selection-tags" data-selection-tags>
+    <span class="filter-summary-tag" data-category="all">All Works</span>
+  </div>
+</div>

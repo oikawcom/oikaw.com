@@ -6,11 +6,41 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { title, year, context, roles, thumbnail } = project.data;
+const {
+  title,
+  year,
+  media,
+  type,
+  roles,
+  techniques,
+  context,
+  scope,
+  clientArtist,
+  thumbnail,
+} = project.data;
+
+const displayTitle = clientArtist ? `${clientArtist} — ${title}` : title;
+
+const filterData = JSON.stringify({
+  id: project.data.id,
+  slug: project.data.slug,
+  year,
+  media,
+  type,
+  roles,
+  techniques,
+  context,
+  scope,
+  clientArtist,
+});
 ---
 
-<article class="project-card" data-project-card data-roles={roles.join('|')}>
-  <a class="project-link" href={`/${project.data.slug}`}>
+<article class="project-card" data-project-card data-project={filterData}>
+  <a
+    class="project-link"
+    href={`/${project.data.slug}`}
+    aria-label={`${displayTitle}, ${type}`}
+  >
     <figure class="project-visual">
       {
         thumbnail ? (
@@ -28,9 +58,8 @@ const { title, year, context, roles, thumbnail } = project.data;
       }
     </figure>
     <div class="project-card-copy">
-      <h2>{title}</h2>
-      {(year || context) && <p>{[year, context].filter(Boolean).join(' · ')}</p>}
-      {roles.length > 0 && <p class="project-role">{roles.join(', ')}</p>}
+      <h2>{displayTitle}</h2>
+      <p class="project-type">{type}</p>
     </div>
   </a>
 </article>

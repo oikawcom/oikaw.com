@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro';
+import FilterTray from '../components/FilterTray.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getAllProjects, type ProjectEntry } from '../lib/projects';
 
@@ -23,6 +24,7 @@ const {
   media: mediaCategory,
   type,
   context,
+  scope,
   roles,
   techniques,
   clientArtist,
@@ -37,16 +39,30 @@ const {
   ogImage,
 } = project.data;
 
-const metadata = [
-  ['Year', year ? String(year) : undefined],
-  ['Media', mediaCategory],
-  ['Type', type],
-  ['Context', context],
-  ['Client / Artist', clientArtist],
-  ['Role', roles.length > 0 ? roles.join(', ') : undefined],
-  ['Technique', techniques.length > 0 ? techniques.join(', ') : undefined],
-  ['Series / Collection', seriesCollection],
-].filter((entry): entry is [string, string] => Boolean(entry[1]));
+interface MetadataEntry {
+  label: string;
+  values: string[];
+  category?: string;
+}
+
+const roleValues = [
+  ...roles,
+  ...(scope === 'solo-production' ? ['Solo Production'] : []),
+];
+const metadata: MetadataEntry[] = [
+  { label: 'Year', values: year ? [String(year)] : [] },
+  { label: 'Media', values: [mediaCategory], category: 'media' },
+  { label: 'Type', values: [type], category: 'type' },
+  { label: 'Context', values: context ? [context] : [], category: 'context' },
+  {
+    label: 'Client / Artist',
+    values: clientArtist ? [clientArtist] : [],
+    category: 'clientArtist',
+  },
+  { label: 'Role', values: roleValues, category: 'role' },
+  { label: 'Technique', values: techniques, category: 'technique' },
+  { label: 'Series / Collection', values: seriesCollection ? [seriesCollection] : [] },
+].filter(({ values }) => values.length > 0);
 ---
 
 <BaseLayout
@@ -57,6 +73,10 @@ const metadata = [
     (year ? `${title}, ${year}` : title)}
   ogImage={ogImage}
 >
+  <div class="detail-filter-toolbar">
+    <FilterTray context="detail" />
+  </div>
+
   <article class="project-detail">
     <header class="project-heading">
       <p class="eyebrow">Project</p>
@@ -65,10 +85,29 @@ const metadata = [
 
     <dl class="project-metadata">
       {
-        metadata.map(([label, value]) => (
+        metadata.map(({ label, values, category }) => (
           <div>
             <dt>{label}</dt>
-            <dd>{value}</dd>
+            <dd>
+              {category ? (
+                <span class="detail-filter-values">
+                  {values.map((value) => (
+                    <button
+                      class="detail-filter-tag"
+                      type="button"
+                      aria-pressed="false"
+                      data-detail-filter
+                      data-category={category}
+                      data-value={value}
+                    >
+                      {value}
+                    </button>
+                  ))}
+                </span>
+              ) : (
+                values.join(', ')
+              )}
+            </dd>
           </div>
         ))
       }
@@ -131,4 +170,44 @@ const metadata = [
       )
     }
   </article>
+
+  <script>
+    import { setupFilterTray } from '../lib/filter-tray.mjs';
+
+    type Selection = Record<string, string[]>;
+
+    const detailTags = [
+      ...document.querySelectorAll<HTMLButtonElement>('[data-detail-filter]'),
+    ];
+    let trayController: ReturnType<typeof setupFilterTray>;
+
+    const updateDetailTags = ({ draft }: { draft: Selection }) => {
+      for (const button of detailTags) {
+        const category = button.dataset.category ?? '';
+        const value = button.dataset.value ?? '';
+        button.setAttribute(
+          'aria-pressed',
+          String((draft[category] ?? []).includes(value)),
+        );
+      }
+    };
+
+    trayController = setupFilterTray({
+      onDraftChange: updateDetailTags,
+      onApply: () => window.location.assign('/'),
+    });
+
+    if (!trayController) throw new Error('Filter tray could not be initialized.');
+
+    for (const button of detailTags) {
+      button.addEventListener('click', () => {
+        trayController?.toggle(
+          button.dataset.category ?? '',
+          button.dataset.value ?? '',
+        );
+      });
+    }
+
+    updateDetailTags(trayController.getState());
+  </script>
 </BaseLayout>
