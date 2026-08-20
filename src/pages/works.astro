@@ -1,0 +1,126 @@
+---
+import ProjectCard from '../components/ProjectCard.astro';
+import FilterTray from '../components/FilterTray.astro';
+import WorksFilter from '../components/WorksFilter.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { toFilterProject } from '../lib/project-metadata.mjs';
+import { getPublishedProjects } from '../lib/projects';
+
+const projects = await getPublishedProjects();
+const filterProjects = projects.map(({ data }) => toFilterProject(data));
+---
+
+<BaseLayout
+  title="WORKS — oikaw.com"
+  description="Selected projects and creative work by Yusuke Oikawa."
+  activeNav="works"
+>
+  <WorksFilter slot="sidebar" projects={filterProjects} />
+
+  <section class="works-page" aria-labelledby="project-list-heading" data-works-page>
+    <h1 id="project-list-heading" class="visually-hidden">Works</h1>
+
+    <div class="works-toolbar sticky-filter-toolbar">
+      <FilterTray />
+
+      <label class="sort-control">
+        <span class="visually-hidden">Sort works</span>
+        <select data-sort-select>
+          <option value="newest" selected>NEWEST</option>
+          <option value="oldest">OLDEST</option>
+        </select>
+      </label>
+    </div>
+
+    <p class="filter-status visually-hidden" data-filter-status aria-live="polite">
+      {projects.length} projects shown
+    </p>
+
+    <div class="project-grid" data-project-grid>
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+
+  <script>
+    import { setupFilterTray } from '../lib/filter-tray.mjs';
+    import { setupWorksFilter } from '../lib/works-filter-ui.mjs';
+    import { matchesFilters, sortProjects } from '../lib/works-filter.mjs';
+
+    interface FilterProject {
+      id: string;
+      slug: string;
+      year?: number;
+      month?: number;
+      media: string;
+      type: string;
+      roles: string[];
+      techniques: string[];
+      context?: string;
+      scope?: string;
+      clientArtists: string[];
+      series?: string;
+    }
+
+    type Selection = Record<string, string[]>;
+
+    const projectGrid = document.querySelector<HTMLElement>('[data-project-grid]');
+    const filterStatus = document.querySelector<HTMLElement>('[data-filter-status]');
+    const sortSelect = document.querySelector<HTMLSelectElement>('[data-sort-select]');
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-project-card]')]
+      .map((element) => {
+        const source = element.dataset.project;
+        return source
+          ? { element, project: JSON.parse(source) as FilterProject }
+          : null;
+      })
+      .filter(
+        (entry): entry is { element: HTMLElement; project: FilterProject } =>
+          entry !== null,
+      );
+    const projects = cards.map(({ project }) => project);
+
+    if (projectGrid && filterStatus && sortSelect) {
+      let sidebarController: ReturnType<typeof setupWorksFilter>;
+
+      const sortGrid = () => {
+        const order = sortSelect.value === 'oldest' ? 'oldest' : 'newest';
+        const sortedProjects = sortProjects(projects, order);
+        const cardById = new Map(cards.map((entry) => [entry.project.id, entry.element]));
+
+        for (const project of sortedProjects) {
+          const card = cardById.get(project.id);
+          if (card) projectGrid.append(card);
+        }
+      };
+
+      const renderGrid = (applied: Selection) => {
+        let visibleCount = 0;
+
+        for (const { element, project } of cards) {
+          const visible = matchesFilters(project, applied);
+          element.hidden = !visible;
+          if (visible) visibleCount += 1;
+        }
+
+        filterStatus.textContent = `${visibleCount} project${visibleCount === 1 ? '' : 's'} shown`;
+      };
+
+      const trayController = setupFilterTray({
+        onDraftChange: ({ draft }: { draft: Selection }) =>
+          sidebarController?.update(draft),
+        onApply: ({ applied }: { applied: Selection }) => {
+          renderGrid(applied);
+          sortGrid();
+        },
+      });
+
+      if (!trayController) throw new Error('Filter tray could not be initialized.');
+      sidebarController = setupWorksFilter({ trayController });
+      if (!sidebarController) throw new Error('Works filter could not be initialized.');
+
+      sortSelect.addEventListener('change', sortGrid);
+      renderGrid(trayController.getState().applied as Selection);
+      sortGrid();
+    }
+  </script>
+</BaseLayout>

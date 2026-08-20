@@ -5,6 +5,7 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  canonicalPath?: string;
   activeNav?: 'works' | 'profile';
 }
 
@@ -12,8 +13,12 @@ const {
   title = 'oikaw.com',
   description = 'Selected projects and creative work.',
   ogImage,
+  canonicalPath,
   activeNav,
 } = Astro.props;
+const canonicalUrl = canonicalPath
+  ? new URL(canonicalPath, Astro.site ?? Astro.url).toString()
+  : undefined;
 ---
 
 <!doctype html>
@@ -25,6 +30,7 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {ogImage && <meta property="og:image" content={ogImage} />}
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
@@ -77,14 +83,14 @@ const {
         <nav class="site-nav" aria-label="Primary navigation">
           <a
             class:list={['site-nav-link', { 'is-active': activeNav === 'profile' }]}
-            href="/contact"
+            href="/about"
             aria-current={activeNav === 'profile' ? 'page' : undefined}
           >
             YUSUKE OIKAWA
           </a>
           <a
             class:list={['site-nav-link', { 'is-active': activeNav === 'works' }]}
-            href="/"
+            href="/works"
             aria-current={activeNav === 'works' ? 'page' : undefined}
           >
             WORKS

@@ -9,13 +9,15 @@ interface FilterProject {
   id: string;
   slug: string;
   year?: number;
+  month?: number;
   media: string;
   type: string;
   roles: string[];
   techniques: string[];
   context?: string;
   scope?: string;
-  clientArtist?: string;
+  clientArtists: string[];
+  series?: string;
 }
 
 interface Props {
@@ -26,7 +28,12 @@ const { projects } = Astro.props;
 const emptySelection = createEmptySelection();
 ---
 
-<section class="works-filter" aria-labelledby="works-filter-heading" data-filter-root>
+<section
+  class="works-filter"
+  aria-labelledby="works-filter-heading"
+  data-filter-root
+  data-projects={JSON.stringify(projects)}
+>
   <h2 id="works-filter-heading" class="visually-hidden">Filter works</h2>
   <div class="filter-scroll-frame">
     <div

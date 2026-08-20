@@ -60,7 +60,11 @@ export const filterGroups = Object.freeze([
   },
 ]);
 
-export const dynamicFilterCategories = Object.freeze(['clientArtist']);
+export const dynamicFilterCategories = Object.freeze([
+  'clientArtist',
+  'year',
+  'series',
+]);
 export const selectionCategories = Object.freeze([
   ...filterGroups.map(({ key }) => key),
   ...dynamicFilterCategories,
@@ -103,7 +107,11 @@ function projectValues(project, category) {
     case 'context':
       return project.context ? [project.context] : [];
     case 'clientArtist':
-      return project.clientArtist ? [project.clientArtist] : [];
+      return project.clientArtists ?? [];
+    case 'year':
+      return Number.isInteger(project.year) ? [String(project.year)] : [];
+    case 'series':
+      return project.series ? [project.series] : [];
     default:
       return [];
   }
@@ -146,7 +154,11 @@ export function selectedFilters(selection) {
 }
 
 export function sortProjects(projects, order = 'newest') {
-  return [...projects].sort((left, right) => {
+  return projects
+    .map((project, index) => ({ project, index }))
+    .sort((leftEntry, rightEntry) => {
+    const left = leftEntry.project;
+    const right = rightEntry.project;
     const leftYear = Number.isInteger(left.year) ? left.year : null;
     const rightYear = Number.isInteger(right.year) ? right.year : null;
 
@@ -156,6 +168,16 @@ export function sortProjects(projects, order = 'newest') {
       return order === 'oldest' ? leftYear - rightYear : rightYear - leftYear;
     }
 
-    return left.slug.localeCompare(right.slug, 'en');
-  });
+    const leftMonth = Number.isInteger(left.month) ? left.month : null;
+    const rightMonth = Number.isInteger(right.month) ? right.month : null;
+
+    if (leftMonth === null && rightMonth !== null) return 1;
+    if (leftMonth !== null && rightMonth === null) return -1;
+    if (leftMonth !== null && rightMonth !== null && leftMonth !== rightMonth) {
+      return order === 'oldest' ? leftMonth - rightMonth : rightMonth - leftMonth;
+    }
+
+    return leftEntry.index - rightEntry.index;
+  })
+    .map(({ project }) => project);
 }

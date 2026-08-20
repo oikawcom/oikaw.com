@@ -105,7 +105,7 @@ This normal browsing behavior is separate from legacy migration compatibility:
 - Arbitrary filter combinations are not made indexable merely to support migration.
 - Group compatibility views do not establish a reusable Collection content model.
 
-The legacy category paths `/video`, `/graphic`, `/others`, and `/musicvideo` map to the root WORKS listing. Future filter UI and filter URL-state remain production responsibilities rather than migration targets.
+The legacy category paths `/video`, `/graphic`, `/others`, and `/musicvideo` map to the canonical `/works` archive. Filter URL-state remains a production responsibility rather than a migration target.
 
 ## Project slug policy
 
@@ -117,15 +117,15 @@ New or blank Project slugs follow these rules:
 4. Do not rename an existing nonblank slug solely for stylistic uniformity when it has no error, collision, or migration problem.
 5. Do not invent an English translation for a Japanese-only title. Leave the slug blank until an official English title or confirmed romanization is available.
 
-Examples of confirmed collision handling include `fairytale-cover-art` / `fairytale-music-video` and `log-out-cover-art` / `log-out-music-video`.
+Examples of confirmed collision handling include `4s4ki-fairytale-cover-art` / `4s4ki-fairytale-music-video` and `4s4ki-log-out-cover-art` / `4s4ki-log-out-music-video`.
 
 Human Validation supplied the required official or confirmed Latin forms, so all 77 Projects now have nonblank unique slugs:
 
-- `project-4s4ki-mvs-2020-04` — クロニクル → `chronicle`
-- `project-4s4ki-mvs-2022-1st-01` — ブラックホール → `blackhole`
-- `project-4s4ki-mvs-2022-2nd-02` — 電脳郷 → `cyberspace`
-- `project-4s4ki-mvs-undeadcyborg-01` — ☆メガジョッキ☆ → `megajokki`
-- `project-4s4ki-mvs-undeadcyborg-04` — 幸福論 → `happiness-theory`
+- `project-4s4ki-mvs-2020-04` — クロニクル → `4s4ki-chronicle`
+- `project-4s4ki-mvs-2022-1st-01` — ブラックホール → `4s4ki-blackhole`
+- `project-4s4ki-mvs-2022-2nd-02` — 電脳郷 → `4s4ki-cyberspace`
+- `project-4s4ki-mvs-undeadcyborg-01` — ☆メガジョッキ☆ → `4s4ki-megajokki`
+- `project-4s4ki-mvs-undeadcyborg-04` — 幸福論 → `4s4ki-happiness-theory`
 
 No AI-generated translation was used for these slugs.
 
@@ -135,7 +135,7 @@ No AI-generated translation was used for these slugs.
 
 ```text
 Title: Portrait of 4s4ki 2022
-Slug:  portrait-4s4ki-2022
+Slug:  4s4ki-portrait-2022
 ```
 
 The archived expression `マジカル阿修羅 / Magical Ashura` remains evidence but is not treated as the formal Project title.
@@ -146,7 +146,16 @@ The About/Profile migration is confirmed as:
 /about-1 → /about
 ```
 
-The `/about` route and redirect are not implemented here.
+The canonical production route is `/about`; the `/about-1` redirect remains a migration implementation target.
+
+## Pre-launch production slug sync
+
+Production slug renames made before launch are synchronized in `project-normalization.csv` and the affected URL-map targets without changing the grouped compatibility-view design. The final families are:
+
+- all 31 Projects split from the grouped 4s4ki pages use one leading `4s4ki-` prefix;
+- 遺影にイェーイ uses `4s4ki-iei-ni-yeah`;
+- the three KLOOZ outputs use the `klooz-seasons-` prefix;
+- the eight VR Sculpture outputs map in verified title order to `vr-sculpture-01` through `vr-sculpture-08`.
 
 ## Photography: 4 / 3 / 5
 
@@ -163,4 +172,4 @@ The two India URLs are continuation galleries for one Project. Photography remai
 - No image/video assets or private Adobe account data were accessed.
 - Codex HTTP observed 404 responses on representative Adobe-host URLs on 2026-08-19. Human Validation in normal Chrome confirmed the Adobe Portfolio site displayed normally. The CSV statuses distinguish Codex-environment behavior from production availability.
 
-No production content, route, WORKS filter, redirect, dependency, configuration, commit, or push is part of this migration-data update.
+These migration files remain documentation and data contracts; they do not themselves implement production routes, redirects, dependencies, configuration, commits, or pushes.

@@ -1,5 +1,9 @@
 ---
 import type { ProjectEntry } from '../lib/projects';
+import {
+  taxonomyLabel,
+  toFilterProject,
+} from '../lib/project-metadata.mjs';
 
 interface Props {
   project: ProjectEntry;
@@ -8,38 +12,22 @@ interface Props {
 const { project } = Astro.props;
 const {
   title,
-  year,
-  media,
   type,
-  roles,
-  techniques,
-  context,
-  scope,
-  clientArtist,
+  clientArtists,
   thumbnail,
 } = project.data;
 
-const displayTitle = clientArtist ? `${clientArtist} — ${title}` : title;
-
-const filterData = JSON.stringify({
-  id: project.data.id,
-  slug: project.data.slug,
-  year,
-  media,
-  type,
-  roles,
-  techniques,
-  context,
-  scope,
-  clientArtist,
-});
+const artistDisplay = clientArtists.join(', ');
+const displayTitle = artistDisplay ? `${artistDisplay} — ${title}` : title;
+const typeLabel = taxonomyLabel(type);
+const filterData = JSON.stringify(toFilterProject(project.data));
 ---
 
 <article class="project-card" data-project-card data-project={filterData}>
   <a
     class="project-link"
     href={`/${project.data.slug}`}
-    aria-label={`${displayTitle}, ${type}`}
+    aria-label={`${displayTitle}, ${typeLabel}`}
   >
     <figure class="project-visual">
       {
@@ -59,7 +47,7 @@ const filterData = JSON.stringify({
     </figure>
     <div class="project-card-copy">
       <h2>{displayTitle}</h2>
-      <p class="project-type">{type}</p>
+      <p class="project-type">{typeLabel}</p>
     </div>
   </a>
 </article>

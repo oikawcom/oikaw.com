@@ -1,7 +1,7 @@
 [
   {
     "id": "project-06-emitter",
-    "slug": "06-emitter",
+    "slug": "vr-sculpture-06",
     "title": "06 Emitter",
     "media": "Sculpture",
     "type": "Other Type",
@@ -10,6 +10,7 @@
       "CGI",
       "VR Modeling"
     ],
+    "clientArtists": [],
     "seriesCollection": "VR Sculpture",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -19,7 +20,7 @@
   },
   {
     "id": "project-07-luck",
-    "slug": "07-luck",
+    "slug": "vr-sculpture-07",
     "title": "07 Luck",
     "media": "Sculpture",
     "type": "Other Type",
@@ -28,6 +29,7 @@
       "CGI",
       "VR Modeling"
     ],
+    "clientArtists": [],
     "seriesCollection": "VR Sculpture",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -37,7 +39,7 @@
   },
   {
     "id": "project-08-daydream",
-    "slug": "08-daydream",
+    "slug": "vr-sculpture-08",
     "title": "08 Daydream",
     "media": "Sculpture",
     "type": "Other Type",
@@ -46,6 +48,7 @@
       "CGI",
       "VR Modeling"
     ],
+    "clientArtists": [],
     "seriesCollection": "VR Sculpture",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -62,7 +65,9 @@
     "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [
       "project-4s4ki-mvs-2020-01"
@@ -82,7 +87,9 @@
     "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -93,14 +100,17 @@
   },
   {
     "id": "project-4s4ki-artwork-2020-03",
-    "slug": "4s4ki-masayoshi-iimori",
+    "slug": "4s4ki-iei-ni-yeah",
     "title": "遺影にイェーイ",
     "year": 2020,
     "media": "Image",
     "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki, Masayoshi Iimori",
+    "clientArtists": [
+      "4s4ki",
+      "Masayoshi Iimori"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -111,14 +121,16 @@
   },
   {
     "id": "project-4s4ki-artwork-2021-01",
-    "slug": "fairytale-cover-art",
+    "slug": "4s4ki-fairytale-cover-art",
     "title": "FAIRYTALE feat. Zheani",
     "year": 2021,
     "media": "Image",
     "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [
       "project-4s4ki-mvs-2021-1st-01"
@@ -131,14 +143,16 @@
   },
   {
     "id": "project-4s4ki-artwork-2021-02",
-    "slug": "gemstone-cover-art",
+    "slug": "4s4ki-gemstone-cover-art",
     "title": "gemstone feat. Puppet",
     "year": 2021,
     "media": "Image",
     "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [
       "project-4s4ki-mvs-2021-1st-02"
@@ -151,14 +165,16 @@
   },
   {
     "id": "project-4s4ki-artwork-2021-03",
-    "slug": "alice-cover-art",
+    "slug": "4s4ki-alice-cover-art",
     "title": "ALICE feat. Smrtdeath",
     "year": 2021,
     "media": "Image",
     "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [
       "project-4s4ki-mvs-2021-1st-03"
@@ -171,14 +187,16 @@
   },
   {
     "id": "project-4s4ki-artwork-2022-01",
-    "slug": "portrait-4s4ki-2022",
+    "slug": "4s4ki-portrait-2022",
     "title": "Portrait of 4s4ki 2022",
     "year": 2022,
     "media": "Image",
     "type": "Portrait",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -188,7 +206,7 @@
   },
   {
     "id": "project-4s4ki-artwork-2022-02",
-    "slug": "log-out-cover-art",
+    "slug": "4s4ki-log-out-cover-art",
     "title": "LOG OUT",
     "year": 2022,
     "media": "Image",
@@ -198,7 +216,9 @@
       "CGI",
       "VR Modeling"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [
       "project-4s4ki-mvs-2022-2nd-01"
@@ -210,14 +230,16 @@
   },
   {
     "id": "project-4s4ki-artwork-2022-03",
-    "slug": "freedom-kingdom",
+    "slug": "4s4ki-freedom-kingdom",
     "title": "Freedom Kingdom feat. Swervy",
     "year": 2022,
     "media": "Image",
     "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Art Works",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -240,7 +262,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/4s4ki",
@@ -250,14 +274,16 @@
   },
   {
     "id": "project-4s4ki-h-o-h-01",
-    "slug": "here-or-heaven",
+    "slug": "4s4ki-here-or-heaven",
     "title": "Here or Heaven",
     "year": 2021,
     "media": "Image",
     "type": "Other Type",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "Here or Heaven / Here or Hell",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -267,14 +293,16 @@
   },
   {
     "id": "project-4s4ki-h-o-h-02",
-    "slug": "here-or-hell",
+    "slug": "4s4ki-here-or-hell",
     "title": "Here or Hell",
     "year": 2022,
     "media": "Image",
-    "type": "Other Type",
+    "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "Here or Heaven / Here or Hell",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -284,7 +312,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2020-01",
-    "slug": "your-dreamland-music-video",
+    "slug": "4s4ki-your-dreamland-music-video",
     "title": "おまえのドリームランド",
     "year": 2020,
     "media": "Video",
@@ -298,7 +326,9 @@
       "Live Action",
       "CGI"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [
       "project-4s4ki-artwork-2020-01"
@@ -310,7 +340,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2020-02",
-    "slug": "i-love-me",
+    "slug": "4s4ki-i-love-me",
     "title": "I LOVE ME",
     "year": 2020,
     "media": "Video",
@@ -326,7 +356,9 @@
       "CGI",
       "Design"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -336,7 +368,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2020-03",
-    "slug": "35-5",
+    "slug": "4s4ki-35-5",
     "title": "35.5",
     "year": 2020,
     "media": "Video",
@@ -349,7 +381,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -359,7 +393,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2020-04",
-    "slug": "chronicle",
+    "slug": "4s4ki-chronicle",
     "title": "クロニクル",
     "year": 2020,
     "media": "Video",
@@ -372,7 +406,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -382,7 +418,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2021-1st-01",
-    "slug": "fairytale-music-video",
+    "slug": "4s4ki-fairytale-music-video",
     "title": "FAIRYTALE feat. Zheani",
     "year": 2021,
     "media": "Video",
@@ -395,7 +431,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [
       "project-4s4ki-artwork-2021-01"
@@ -407,7 +445,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2021-1st-02",
-    "slug": "gemstone-music-video",
+    "slug": "4s4ki-gemstone-music-video",
     "title": "gemstone feat. Puppet",
     "year": 2021,
     "media": "Video",
@@ -423,7 +461,9 @@
       "CGI",
       "Design"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [
       "project-4s4ki-artwork-2021-02"
@@ -435,7 +475,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2021-1st-03",
-    "slug": "alice-music-video",
+    "slug": "4s4ki-alice-music-video",
     "title": "ALICE feat. Smrtdeath",
     "year": 2021,
     "media": "Video",
@@ -448,7 +488,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [
       "project-4s4ki-artwork-2021-03"
@@ -460,7 +502,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2021-1st-04",
-    "slug": "44-seconds",
+    "slug": "4s4ki-44-seconds",
     "title": "44 seconds",
     "year": 2021,
     "media": "Video",
@@ -468,7 +510,9 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -478,7 +522,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2021-2nd-01",
-    "slug": "star-player",
+    "slug": "4s4ki-star-player",
     "title": "STAR PLAYER",
     "year": 2021,
     "media": "Video",
@@ -491,7 +535,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -501,7 +547,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2021-2nd-02",
-    "slug": "m-e-l-t",
+    "slug": "4s4ki-m-e-l-t",
     "title": "m e l t",
     "year": 2021,
     "media": "Video",
@@ -514,7 +560,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -524,7 +572,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2021-2nd-03",
-    "slug": "obon",
+    "slug": "4s4ki-obon",
     "title": "OBON",
     "year": 2021,
     "media": "Video",
@@ -537,7 +585,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -547,7 +597,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2021-2nd-04",
-    "slug": "space-coaster",
+    "slug": "4s4ki-space-coaster",
     "title": "space coaster",
     "year": 2021,
     "media": "Video",
@@ -561,7 +611,9 @@
       "Live Action",
       "CGI"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -571,7 +623,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2022-1st-01",
-    "slug": "blackhole",
+    "slug": "4s4ki-blackhole",
     "title": "ブラックホール",
     "year": 2022,
     "media": "Video",
@@ -585,7 +637,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -595,7 +649,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2022-1st-02",
-    "slug": "0h-g0d",
+    "slug": "4s4ki-0h-g0d",
     "title": "0h G0D!!",
     "year": 2022,
     "media": "Video",
@@ -610,7 +664,9 @@
       "Live Action",
       "Drawing"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -620,7 +676,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2022-2nd-01",
-    "slug": "log-out-music-video",
+    "slug": "4s4ki-log-out-music-video",
     "title": "LOG OUT",
     "year": 2022,
     "media": "Video",
@@ -636,7 +692,9 @@
       "CGI",
       "VR Modeling"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [
       "project-4s4ki-artwork-2022-02"
@@ -648,7 +706,7 @@
   },
   {
     "id": "project-4s4ki-mvs-2022-2nd-02",
-    "slug": "cyberspace",
+    "slug": "4s4ki-cyberspace",
     "title": "電脳郷",
     "year": 2022,
     "media": "Video",
@@ -664,7 +722,9 @@
       "CGI",
       "Generative AI"
     ],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "4s4ki Music Videos",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -674,7 +734,7 @@
   },
   {
     "id": "project-4s4ki-mvs-undeadcyborg-01",
-    "slug": "megajokki",
+    "slug": "4s4ki-megajokki",
     "title": "☆メガジョッキ☆",
     "year": 2021,
     "media": "Video",
@@ -682,7 +742,9 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "UNDEAD CYBORG",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -692,7 +754,7 @@
   },
   {
     "id": "project-4s4ki-mvs-undeadcyborg-02",
-    "slug": "sugar-junky",
+    "slug": "4s4ki-sugar-junky",
     "title": "Sugar Junky",
     "year": 2021,
     "media": "Video",
@@ -700,7 +762,9 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "UNDEAD CYBORG",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -710,7 +774,7 @@
   },
   {
     "id": "project-4s4ki-mvs-undeadcyborg-03",
-    "slug": "reimen",
+    "slug": "4s4ki-reimen",
     "title": "REIMEN",
     "year": 2021,
     "media": "Video",
@@ -718,7 +782,9 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "UNDEAD CYBORG",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -728,7 +794,7 @@
   },
   {
     "id": "project-4s4ki-mvs-undeadcyborg-04",
-    "slug": "happiness-theory",
+    "slug": "4s4ki-happiness-theory",
     "title": "幸福論",
     "year": 2021,
     "media": "Video",
@@ -736,7 +802,9 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "seriesCollection": "UNDEAD CYBORG",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -746,7 +814,7 @@
   },
   {
     "id": "project-as-01",
-    "slug": "as-01",
+    "slug": "vr-sculpture-01",
     "title": "01 Power",
     "media": "Sculpture",
     "type": "Other Type",
@@ -755,6 +823,7 @@
       "CGI",
       "VR Modeling"
     ],
+    "clientArtists": [],
     "seriesCollection": "VR Sculpture",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -764,7 +833,7 @@
   },
   {
     "id": "project-as-02",
-    "slug": "as-02",
+    "slug": "vr-sculpture-02",
     "title": "02 Feeler",
     "media": "Sculpture",
     "type": "Other Type",
@@ -773,6 +842,7 @@
       "CGI",
       "VR Modeling"
     ],
+    "clientArtists": [],
     "seriesCollection": "VR Sculpture",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -782,7 +852,7 @@
   },
   {
     "id": "project-as-03",
-    "slug": "as-03",
+    "slug": "vr-sculpture-03",
     "title": "03 Harvest",
     "media": "Sculpture",
     "type": "Other Type",
@@ -791,6 +861,7 @@
       "CGI",
       "VR Modeling"
     ],
+    "clientArtists": [],
     "seriesCollection": "VR Sculpture",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -800,7 +871,7 @@
   },
   {
     "id": "project-as-04",
-    "slug": "as-04",
+    "slug": "vr-sculpture-04",
     "title": "04 Greed",
     "media": "Sculpture",
     "type": "Other Type",
@@ -809,6 +880,7 @@
       "CGI",
       "VR Modeling"
     ],
+    "clientArtists": [],
     "seriesCollection": "VR Sculpture",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -818,7 +890,7 @@
   },
   {
     "id": "project-as-05",
-    "slug": "as-05",
+    "slug": "vr-sculpture-05",
     "title": "05 Devotion",
     "media": "Sculpture",
     "type": "Other Type",
@@ -827,6 +899,7 @@
       "CGI",
       "VR Modeling"
     ],
+    "clientArtists": [],
     "seriesCollection": "VR Sculpture",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -844,7 +917,9 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "ASIWC (A SHEEP IN WOLF’S CLOTHING)",
+    "clientArtists": [
+      "ASIWC (A SHEEP IN WOLF’S CLOTHING)"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/asiwc-coco"
@@ -866,7 +941,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "ASIWC (A SHEEP IN WOLF’S CLOTHING)",
+    "clientArtists": [
+      "ASIWC (A SHEEP IN WOLF’S CLOTHING)"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/asiwc-dekill"
@@ -883,7 +960,9 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "ASIWC (A SHEEP IN WOLF’S CLOTHING)",
+    "clientArtists": [
+      "ASIWC (A SHEEP IN WOLF’S CLOTHING)"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/asiwc-maria-gucci"
@@ -900,6 +979,7 @@
     "roles": [],
     "techniques": [],
     "context": "Personal",
+    "clientArtists": [],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/beauty-battlers"
@@ -917,6 +997,7 @@
       "Direction"
     ],
     "techniques": [],
+    "clientArtists": [],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/bycatch"
@@ -932,7 +1013,9 @@
     "type": "Music Video",
     "roles": [],
     "techniques": [],
-    "clientArtist": "中華一番",
+    "clientArtists": [
+      "中華一番"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/chuuichi-shouben"
@@ -948,7 +1031,9 @@
     "type": "Music Video",
     "roles": [],
     "techniques": [],
-    "clientArtist": "中華一番",
+    "clientArtists": [
+      "中華一番"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/chuuichi-theme"
@@ -970,7 +1055,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "TORIENA",
+    "clientArtists": [
+      "TORIENA"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/dopinglife"
@@ -987,7 +1074,10 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "DOTAMA feat. 般若",
+    "clientArtists": [
+      "DOTAMA",
+      "般若"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/dotama-honne"
@@ -1003,6 +1093,7 @@
     "type": "Photo",
     "roles": [],
     "techniques": [],
+    "clientArtists": [],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/emily-2023"
@@ -1019,7 +1110,9 @@
     "roles": [],
     "techniques": [],
     "scope": "solo-production",
-    "clientArtist": "GASFACE",
+    "clientArtists": [
+      "GASFACE"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/gasface-fxxk-me"
@@ -1035,7 +1128,9 @@
     "type": "Cover Art",
     "roles": [],
     "techniques": [],
-    "clientArtist": "GASFACE",
+    "clientArtists": [
+      "GASFACE"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/gasface-item"
@@ -1051,6 +1146,7 @@
     "type": "Photo",
     "roles": [],
     "techniques": [],
+    "clientArtists": [],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/india-2017-1-2",
@@ -1060,7 +1156,7 @@
   },
   {
     "id": "project-klooz-seasons-01",
-    "slug": "find-you",
+    "slug": "klooz-seasons-find-you",
     "title": "Find You (Prod. by Seiho)",
     "year": 2013,
     "media": "Video",
@@ -1073,7 +1169,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "KLOOZ",
+    "clientArtists": [
+      "KLOOZ"
+    ],
     "seriesCollection": "SEASONS",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -1083,7 +1181,7 @@
   },
   {
     "id": "project-klooz-seasons-02",
-    "slug": "you-are",
+    "slug": "klooz-seasons-you-are",
     "title": "You Are... (Prod. by grooveman Spot)",
     "year": 2013,
     "media": "Video",
@@ -1096,7 +1194,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "KLOOZ",
+    "clientArtists": [
+      "KLOOZ"
+    ],
     "seriesCollection": "SEASONS",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -1106,7 +1206,7 @@
   },
   {
     "id": "project-klooz-seasons-03",
-    "slug": "lack-of-communication",
+    "slug": "klooz-seasons-lack-of-communication",
     "title": "Lack of Communication (Prod. by grooveman Spot)",
     "year": 2013,
     "media": "Video",
@@ -1119,7 +1219,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "KLOOZ",
+    "clientArtists": [
+      "KLOOZ"
+    ],
     "seriesCollection": "SEASONS",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -1136,7 +1238,9 @@
     "type": "Promo",
     "roles": [],
     "techniques": [],
-    "clientArtist": "LAZYgunsBRISKY",
+    "clientArtists": [
+      "LAZYgunsBRISKY"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/lazy"
@@ -1157,7 +1261,9 @@
       "CGI",
       "Design"
     ],
-    "clientArtist": "LEX",
+    "clientArtists": [
+      "LEX"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/lex-album"
@@ -1178,7 +1284,9 @@
     "techniques": [
       "CGI"
     ],
-    "clientArtist": "LEX",
+    "clientArtists": [
+      "LEX"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/lex-star",
@@ -1201,7 +1309,10 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "maeshima soshi & BLOOM VASE",
+    "clientArtists": [
+      "maeshima soshi",
+      "BLOOM VASE"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/maeshima-bloom-swipe"
@@ -1220,7 +1331,9 @@
       "Animation",
       "Drawing"
     ],
-    "clientArtist": "maeshima soshi",
+    "clientArtists": [
+      "maeshima soshi"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/maeshimasoshi"
@@ -1241,7 +1354,9 @@
     "techniques": [
       "CGI"
     ],
-    "clientArtist": "NOISEMAKER",
+    "clientArtists": [
+      "NOISEMAKER"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/majorminor"
@@ -1263,7 +1378,9 @@
       "CGI",
       "Live Action"
     ],
-    "clientArtist": "m-flo♡chelmico",
+    "clientArtists": [
+      "m-flo♡chelmico"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/mflo-chelmico-runaways"
@@ -1280,7 +1397,9 @@
     "roles": [],
     "techniques": [],
     "context": "Client",
-    "clientArtist": "Fontworks",
+    "clientArtists": [
+      "Fontworks"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/mojimo-game"
@@ -1302,7 +1421,10 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "Monster Rion feat. Taichi Mukai",
+    "clientArtists": [
+      "Monster Rion",
+      "Taichi Mukai"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/monster-rion-message"
@@ -1325,7 +1447,9 @@
       "CGI",
       "Live Action"
     ],
-    "clientArtist": "Monster Rion (SONPUB & The BK Sound)",
+    "clientArtists": [
+      "Monster Rion (SONPUB & The BK Sound)"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/monster-rion-secret"
@@ -1348,7 +1472,9 @@
       "CGI",
       "Live Action"
     ],
-    "clientArtist": "Monster Rion (SONPUB & The BK Sound)",
+    "clientArtists": [
+      "Monster Rion (SONPUB & The BK Sound)"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/monster-riot"
@@ -1364,7 +1490,9 @@
     "type": "Portrait",
     "roles": [],
     "techniques": [],
-    "clientArtist": "4s4ki",
+    "clientArtists": [
+      "4s4ki"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/portrait-4s4ki",
@@ -1383,6 +1511,7 @@
     "techniques": [
       "Mixed Media"
     ],
+    "clientArtists": [],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/portrait-satoru-kawaguchi",
@@ -1405,7 +1534,9 @@
     "techniques": [
       "Live Action"
     ],
-    "clientArtist": "the hatch",
+    "clientArtists": [
+      "the hatch"
+    ],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/sexgame"
@@ -1426,7 +1557,9 @@
     "techniques": [
       "CGI"
     ],
-    "clientArtist": "NHK Eテレ",
+    "clientArtists": [
+      "NHK Eテレ"
+    ],
     "seriesCollection": "天才てれびくん エンディング",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -1448,7 +1581,9 @@
     "techniques": [
       "CGI"
     ],
-    "clientArtist": "NHK Eテレ",
+    "clientArtists": [
+      "NHK Eテレ"
+    ],
     "seriesCollection": "天才てれびくん エンディング",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -1470,7 +1605,9 @@
     "techniques": [
       "CGI"
     ],
-    "clientArtist": "NHK Eテレ",
+    "clientArtists": [
+      "NHK Eテレ"
+    ],
     "seriesCollection": "天才てれびくん エンディング",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -1494,7 +1631,9 @@
       "CGI",
       "Animation"
     ],
-    "clientArtist": "NHK Eテレ",
+    "clientArtists": [
+      "NHK Eテレ"
+    ],
     "seriesCollection": "天才てれびくん エンディング",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -1511,7 +1650,9 @@
     "type": "Broadcast",
     "roles": [],
     "techniques": [],
-    "clientArtist": "NHK Eテレ",
+    "clientArtists": [
+      "NHK Eテレ"
+    ],
     "seriesCollection": "天才てれびくん エンディング",
     "explicitRelatedProjects": [],
     "legacyPaths": [
@@ -1528,6 +1669,7 @@
     "type": "Photo",
     "roles": [],
     "techniques": [],
+    "clientArtists": [],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/thai-2016"
@@ -1547,6 +1689,7 @@
     "techniques": [
       "CGI"
     ],
+    "clientArtists": [],
     "explicitRelatedProjects": [],
     "legacyPaths": [
       "/lex",

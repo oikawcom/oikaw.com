@@ -4,7 +4,7 @@ import {
   selectionCategories,
 } from './works-filter.mjs';
 
-export const filterStateStorageKey = 'oikaw.works-filter.v1';
+export const filterStateStorageKey = 'oikaw.works-filter.v2';
 
 function normalizeSelection(value) {
   const source = value && typeof value === 'object' ? value : {};
@@ -44,7 +44,7 @@ export function readFilterState(storage = globalThis.sessionStorage) {
     const stored = storage?.getItem(filterStateStorageKey);
     if (!stored) return createFilterState();
     const parsed = JSON.parse(stored);
-    if (parsed?.version !== 1) return createFilterState();
+    if (parsed?.version !== 2) return createFilterState();
     return createFilterState(parsed);
   } catch {
     return createFilterState();
@@ -57,7 +57,7 @@ export function writeFilterState(state, storage = globalThis.sessionStorage) {
   try {
     storage?.setItem(
       filterStateStorageKey,
-      JSON.stringify({ version: 1, ...normalized }),
+      JSON.stringify({ version: 2, ...normalized }),
     );
   } catch {
     // The filter remains usable when storage is unavailable.

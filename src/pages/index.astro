@@ -1,205 +1,43 @@
 ---
-import ProjectCard from '../components/ProjectCard.astro';
-import FilterTray from '../components/FilterTray.astro';
-import WorksFilter from '../components/WorksFilter.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getPublishedProjects } from '../lib/projects';
+import siteContent from '../data/site.json';
 
-const projects = await getPublishedProjects();
-const filterProjects = projects.map(({ data }) => ({
-  id: data.id,
-  slug: data.slug,
-  year: data.year,
-  media: data.media,
-  type: data.type,
-  roles: data.roles,
-  techniques: data.techniques,
-  context: data.context,
-  scope: data.scope,
-  clientArtist: data.clientArtist,
-}));
+const { top } = siteContent;
+const visual = top.media;
 ---
 
-<BaseLayout
-  title="WORKS — oikaw.com"
-  description="Selected projects and creative work by Yusuke Oikawa."
-  activeNav="works"
->
-  <WorksFilter slot="sidebar" projects={filterProjects} />
-
-  <section class="works-page" aria-labelledby="project-list-heading" data-works-page>
-    <h1 id="project-list-heading" class="visually-hidden">Works</h1>
-
-    <div class="works-toolbar">
-      <FilterTray />
-
-      <label class="sort-control">
-        <span class="visually-hidden">Sort works</span>
-        <select data-sort-select>
-          <option value="newest" selected>NEWEST</option>
-          <option value="oldest">OLDEST</option>
-        </select>
-      </label>
-    </div>
-
-    <p class="filter-status visually-hidden" data-filter-status aria-live="polite">
-      {projects.length} projects shown
-    </p>
-
-    <div class="project-grid" data-project-grid>
-      {projects.map((project) => <ProjectCard project={project} />)}
-    </div>
+<BaseLayout title="oikaw.com" description="Work by Yusuke Oikawa.">
+  <section class="top-page" aria-label="Top">
+    <figure class="top-main-visual project-content-container">
+      {
+        visual.kind === 'image' && visual.src ? (
+          <img
+            src={visual.src}
+            alt={visual.alt}
+            style={`aspect-ratio: ${visual.aspectRatio}`}
+          />
+        ) : visual.kind === 'video' && visual.src ? (
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster={visual.poster ?? undefined}
+            aria-label={visual.alt || undefined}
+            style={`aspect-ratio: ${visual.aspectRatio}`}
+          >
+            <source src={visual.src} />
+          </video>
+        ) : (
+          <div
+            class="top-visual-placeholder"
+            role="img"
+            aria-label="Main visual placeholder"
+            style={`aspect-ratio: ${visual.aspectRatio}`}
+          />
+        )
+      }
+    </figure>
+    <p class="top-copyright project-content-container">{top.copyright}</p>
   </section>
-
-  <script>
-    import { setupFilterTray } from '../lib/filter-tray.mjs';
-    import {
-      matchesFilters,
-      prospectiveCount,
-      sortProjects,
-    } from '../lib/works-filter.mjs';
-
-    interface FilterProject {
-      id: string;
-      slug: string;
-      year?: number;
-      media: string;
-      type: string;
-      roles: string[];
-      techniques: string[];
-      context?: string;
-      scope?: string;
-      clientArtist?: string;
-    }
-
-    type Selection = Record<string, string[]>;
-
-    const filterRoot = document.querySelector<HTMLElement>('[data-filter-root]');
-    const filterScroll = document.querySelector<HTMLElement>('[data-filter-scroll]');
-    const filterFade = document.querySelector<HTMLElement>('[data-filter-fade]');
-    const projectGrid = document.querySelector<HTMLElement>('[data-project-grid]');
-    const filterStatus = document.querySelector<HTMLElement>('[data-filter-status]');
-    const sortSelect = document.querySelector<HTMLSelectElement>('[data-sort-select]');
-
-    const cards = [...document.querySelectorAll<HTMLElement>('[data-project-card]')]
-      .map((element) => {
-        const source = element.dataset.project;
-        return source
-          ? { element, project: JSON.parse(source) as FilterProject }
-          : null;
-      })
-      .filter(
-        (entry): entry is { element: HTMLElement; project: FilterProject } =>
-          entry !== null,
-      );
-    const projects = cards.map(({ project }) => project);
-
-    if (
-      filterRoot &&
-      projectGrid &&
-      filterStatus &&
-      sortSelect
-    ) {
-      let trayController: ReturnType<typeof setupFilterTray>;
-
-      const updateScrollFade = () => {
-        if (!filterScroll || !filterFade) return;
-        const hasOverflow = filterScroll.scrollHeight > filterScroll.clientHeight + 1;
-        const isAtEnd =
-          filterScroll.scrollTop + filterScroll.clientHeight >=
-          filterScroll.scrollHeight - 1;
-        filterFade.classList.toggle('is-visible', hasOverflow && !isAtEnd);
-      };
-
-      const updateTagControls = () => {
-        const draft = trayController?.getState().draft as Selection | undefined;
-        if (!draft) return;
-
-        for (const button of filterRoot.querySelectorAll<HTMLButtonElement>(
-          '[data-filter-tag]',
-        )) {
-          const category = button.dataset.category ?? '';
-          const value = button.dataset.value ?? '';
-          const selected = (draft[category] ?? []).includes(value);
-          const count = prospectiveCount(projects, draft, category, value);
-          const countElement = button.querySelector<HTMLElement>('[data-filter-count]');
-
-          button.setAttribute('aria-pressed', String(selected));
-          button.disabled = !selected && count === 0;
-          if (countElement) countElement.textContent = String(count);
-        }
-
-      };
-
-      const sortGrid = () => {
-        const order = sortSelect.value === 'oldest' ? 'oldest' : 'newest';
-        const sortedProjects = sortProjects(projects, order);
-        const cardById = new Map(cards.map((entry) => [entry.project.id, entry.element]));
-
-        for (const project of sortedProjects) {
-          const card = cardById.get(project.id);
-          if (card) projectGrid.append(card);
-        }
-      };
-
-      const renderGrid = (applied: Selection) => {
-        let visibleCount = 0;
-
-        for (const { element, project } of cards) {
-          const visible = matchesFilters(project, applied);
-          element.hidden = !visible;
-          if (visible) visibleCount += 1;
-        }
-
-        filterStatus.textContent = `${visibleCount} project${visibleCount === 1 ? '' : 's'} shown`;
-      };
-
-      trayController = setupFilterTray({
-        onDraftChange: updateTagControls,
-        onApply: ({ applied }: { applied: Selection }) => {
-          renderGrid(applied);
-          sortGrid();
-        },
-      });
-
-      if (!trayController) throw new Error('Filter tray could not be initialized.');
-
-      for (const toggle of filterRoot.querySelectorAll<HTMLButtonElement>(
-        '[data-filter-toggle]',
-      )) {
-        toggle.addEventListener('click', () => {
-          const panelId = toggle.getAttribute('aria-controls');
-          const panel = panelId ? document.getElementById(panelId) : null;
-          const expanded = toggle.getAttribute('aria-expanded') === 'true';
-          const symbol = toggle.querySelector<HTMLElement>('[data-filter-symbol]');
-
-          toggle.setAttribute('aria-expanded', String(!expanded));
-          if (panel) panel.hidden = expanded;
-          if (symbol) symbol.textContent = expanded ? '+' : '−';
-          requestAnimationFrame(updateScrollFade);
-        });
-      }
-
-      for (const button of filterRoot.querySelectorAll<HTMLButtonElement>(
-        '[data-filter-tag]',
-      )) {
-        button.addEventListener('click', () => {
-          if (button.disabled) return;
-          trayController?.toggle(
-            button.dataset.category ?? '',
-            button.dataset.value ?? '',
-          );
-        });
-      }
-
-      sortSelect.addEventListener('change', sortGrid);
-      filterScroll?.addEventListener('scroll', updateScrollFade, { passive: true });
-      window.addEventListener('resize', updateScrollFade, { passive: true });
-
-      updateTagControls();
-      renderGrid(trayController.getState().applied as Selection);
-      sortGrid();
-      updateScrollFade();
-    }
-  </script>
 </BaseLayout>

@@ -1,0 +1,40 @@
+{
+  "top": {
+    "featuredProjectId": null,
+    "media": {
+      "kind": "placeholder",
+      "src": null,
+      "poster": null,
+      "alt": "",
+      "aspectRatio": "16 / 9"
+    },
+    "copyright": "© Yusuke Oikawa"
+  },
+  "about": {
+    "portrait": null,
+    "nameJa": "及川佑介",
+    "nameEn": "Yusuke Oikawa",
+    "disciplineJa": "ディレクター / ビジュアルアーティスト",
+    "profiles": {
+      "ja": null,
+      "en": null
+    },
+    "links": [
+      {
+        "label": "INSTAGRAM",
+        "display": "@yusukeoikaw",
+        "url": null
+      },
+      {
+        "label": "ONLINE STORE",
+        "display": "https://deepdeal.oikaw.com",
+        "url": "https://deepdeal.oikaw.com"
+      },
+      {
+        "label": "LINKTREE",
+        "display": "https://linktr.ee/oikaw",
+        "url": "https://linktr.ee/oikaw"
+      }
+    ]
+  }
+}

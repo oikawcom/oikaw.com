@@ -5,7 +5,7 @@ export type ProjectEntry = CollectionEntry<'projects'>;
 
 const expectedMigratedProjectCount = 77;
 const expectedExplicitRelationPairs = 5;
-const reservedRootSlugs = new Set(['contact']);
+const reservedRootSlugs = new Set(['about', 'contact', 'works']);
 
 function validateProjects(projects: ProjectEntry[]): void {
   if (projects.length !== expectedMigratedProjectCount) {
@@ -77,11 +77,12 @@ export async function getPublishedProjects(): Promise<ProjectEntry[]> {
   const projects = (await getAllProjects()).filter(
     ({ data }) => data.initialReleaseScope && data.publicationStatus !== 'draft',
   );
-  const projectOrder = new Map(
-    sortProjects(
-      projects.map(({ data }) => data),
-      'newest',
-    ).map(({ id }, index) => [id, index]),
+  const sortedProjects = sortProjects(
+    projects.map(({ data }) => data),
+    'newest',
+  ) as ProjectEntry['data'][];
+  const projectOrder = new Map<string, number>(
+    sortedProjects.map(({ id }, index): [string, number] => [id, index]),
   );
 
   return projects.sort(

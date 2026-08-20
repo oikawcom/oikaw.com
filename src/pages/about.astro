@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import siteContent from '../data/site.json';
+
+const { about } = siteContent;
+---
+
+<BaseLayout
+  title="Yusuke Oikawa — oikaw.com"
+  description="Profile and contact information for Yusuke Oikawa."
+  activeNav="profile"
+>
+  <article class="about-page project-content-container">
+    <section class="about-profile" aria-labelledby="about-name">
+      <figure class="about-portrait">
+        {
+          about.portrait ? (
+            <img src={about.portrait} alt={`${about.nameJa} / ${about.nameEn}`} />
+          ) : (
+            <div class="about-portrait-placeholder" role="img" aria-label="Portrait placeholder" />
+          )
+        }
+      </figure>
+
+      <div class="about-profile-copy">
+        <div class="about-profile-heading">
+          <div>
+            <h1 id="about-name">{about.nameJa} / {about.nameEn}</h1>
+            <p class="about-discipline">{about.disciplineJa}</p>
+          </div>
+          <div class="profile-language" role="group" aria-label="Profile language">
+            <button type="button" aria-pressed="true">JP</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" aria-pressed="false" disabled>EN</button>
+          </div>
+        </div>
+
+        <div class="about-profile-text" lang="ja">
+          {about.profiles.ja ? <p>{about.profiles.ja}</p> : <p>プロフィール未入力</p>}
+        </div>
+
+        <dl class="about-links">
+          {
+            about.links.map((item) => (
+              <div>
+                <dt>{item.label}</dt>
+                <dd>
+                  {item.url ? (
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                      {item.display}
+                    </a>
+                  ) : (
+                    <span>{item.display}</span>
+                  )}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">CONTACT</h2>
+      <form class="contact-form" data-contact-form>
+        <fieldset>
+          <legend>What's this about? *</legend>
+          <div class="contact-reasons">
+            {['Work / Project', 'Question / Request', 'Just a Message', 'Other'].map((label) => (
+              <label>
+                <input type="radio" name="reason" value={label} required />
+                <span>{label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <div class="contact-fields">
+          <label>
+            <span>Name *</span>
+            <input type="text" name="name" placeholder="Your Name..." required />
+          </label>
+          <label>
+            <span>Email *</span>
+            <input type="email" name="email" placeholder="Email for replies..." required />
+          </label>
+        </div>
+
+        <label class="contact-message">
+          <span>Message *</span>
+          <textarea name="message" placeholder="Your message..." required></textarea>
+        </label>
+
+        <button class="contact-submit" type="submit">Send Message</button>
+      </form>
+    </section>
+  </article>
+
+  <script>
+    const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+    });
+  </script>
+</BaseLayout>
