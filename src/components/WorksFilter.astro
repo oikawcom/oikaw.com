@@ -22,10 +22,39 @@ interface FilterProject {
 
 interface Props {
   projects: FilterProject[];
+  instanceId?: string;
+  includeDynamic?: boolean;
 }
 
-const { projects } = Astro.props;
+const {
+  projects,
+  instanceId = 'desktop',
+  includeDynamic = false,
+} = Astro.props;
 const emptySelection = createEmptySelection();
+const uniqueValues = (values: (string | undefined)[]) =>
+  [...new Set(values.filter((value): value is string => Boolean(value)))];
+const dynamicGroups = [
+  {
+    key: 'clientArtist',
+    label: 'CLIENT / ARTIST',
+    values: uniqueValues(projects.flatMap(({ clientArtists }) => clientArtists))
+      .sort((left, right) => left.localeCompare(right, 'ja')),
+  },
+  {
+    key: 'year',
+    label: 'YEAR',
+    values: uniqueValues(projects.map(({ year }) => year ? String(year) : undefined))
+      .sort((left, right) => Number(right) - Number(left)),
+  },
+  {
+    key: 'series',
+    label: 'SERIES / COLLECTION',
+    values: uniqueValues(projects.map(({ series }) => series))
+      .sort((left, right) => left.localeCompare(right, 'ja')),
+  },
+];
+const groups = includeDynamic ? [...filterGroups, ...dynamicGroups] : filterGroups;
 ---
 
 <section
@@ -43,8 +72,8 @@ const emptySelection = createEmptySelection();
       data-filter-scroll
     >
       {
-        filterGroups.map(({ key, label, values }) => {
-          const panelId = `filter-panel-${key}`;
+        groups.map(({ key, label, values }) => {
+          const panelId = `${instanceId}-filter-panel-${key}`;
 
           return (
             <section class="filter-group" data-filter-group={key}>

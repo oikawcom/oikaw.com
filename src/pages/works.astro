@@ -1,6 +1,8 @@
 ---
 import ProjectCard from '../components/ProjectCard.astro';
 import FilterTray from '../components/FilterTray.astro';
+import MobileAppliedFilters from '../components/MobileAppliedFilters.astro';
+import MobileFilterDialog from '../components/MobileFilterDialog.astro';
 import WorksFilter from '../components/WorksFilter.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { toFilterProject } from '../lib/project-metadata.mjs';
@@ -30,7 +32,25 @@ const filterProjects = projects.map(({ data }) => toFilterProject(data));
           <option value="oldest">OLDEST</option>
         </select>
       </label>
+
+      <div class="mobile-works-controls">
+        <button
+          class="mobile-filter-open-button"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="mobile-filter-dialog"
+          aria-expanded="false"
+          data-mobile-filter-open
+        >
+          FILTER
+        </button>
+        <button class="mobile-sort-toggle" type="button" data-mobile-sort-toggle>
+          NEWEST
+        </button>
+      </div>
     </div>
+
+    <MobileAppliedFilters />
 
     <p class="filter-status visually-hidden" data-filter-status aria-live="polite">
       {projects.length} projects shown
@@ -41,8 +61,11 @@ const filterProjects = projects.map(({ data }) => toFilterProject(data));
     </div>
   </section>
 
+  <MobileFilterDialog projects={filterProjects} />
+
   <script>
     import { setupFilterTray } from '../lib/filter-tray.mjs';
+    import { setupMobileFilterUI } from '../lib/mobile-filter-ui.mjs';
     import { setupWorksFilter } from '../lib/works-filter-ui.mjs';
     import { matchesFilters, sortProjects } from '../lib/works-filter.mjs';
 
@@ -66,6 +89,9 @@ const filterProjects = projects.map(({ data }) => toFilterProject(data));
     const projectGrid = document.querySelector<HTMLElement>('[data-project-grid]');
     const filterStatus = document.querySelector<HTMLElement>('[data-filter-status]');
     const sortSelect = document.querySelector<HTMLSelectElement>('[data-sort-select]');
+    const mobileSortToggle = document.querySelector<HTMLButtonElement>(
+      '[data-mobile-sort-toggle]',
+    );
     const cards = [...document.querySelectorAll<HTMLElement>('[data-project-card]')]
       .map((element) => {
         const source = element.dataset.project;
@@ -81,6 +107,7 @@ const filterProjects = projects.map(({ data }) => toFilterProject(data));
 
     if (projectGrid && filterStatus && sortSelect) {
       let sidebarController: ReturnType<typeof setupWorksFilter>;
+      let mobileFilterController: ReturnType<typeof setupMobileFilterUI>;
 
       const sortGrid = () => {
         const order = sortSelect.value === 'oldest' ? 'oldest' : 'newest';
@@ -90,6 +117,16 @@ const filterProjects = projects.map(({ data }) => toFilterProject(data));
         for (const project of sortedProjects) {
           const card = cardById.get(project.id);
           if (card) projectGrid.append(card);
+        }
+
+        if (mobileSortToggle) {
+          const label = order === 'oldest' ? 'OLDEST' : 'NEWEST';
+          const nextLabel = order === 'oldest' ? 'NEWEST' : 'OLDEST';
+          mobileSortToggle.textContent = label;
+          mobileSortToggle.setAttribute(
+            'aria-label',
+            `Sort works, currently ${label.toLowerCase()}. Activate for ${nextLabel.toLowerCase()}.`,
+          );
         }
       };
 
@@ -106,19 +143,30 @@ const filterProjects = projects.map(({ data }) => toFilterProject(data));
       };
 
       const trayController = setupFilterTray({
-        onDraftChange: ({ draft }: { draft: Selection }) =>
-          sidebarController?.update(draft),
+        onDraftChange: ({ draft }: { draft: Selection }) => {
+          sidebarController?.update(draft);
+          mobileFilterController?.renderDraft(draft);
+        },
         onApply: ({ applied }: { applied: Selection }) => {
           renderGrid(applied);
           sortGrid();
+          mobileFilterController?.renderApplied(applied);
         },
       });
 
       if (!trayController) throw new Error('Filter tray could not be initialized.');
       sidebarController = setupWorksFilter({ trayController });
       if (!sidebarController) throw new Error('Works filter could not be initialized.');
+      mobileFilterController = setupMobileFilterUI({ trayController });
+      if (!mobileFilterController) {
+        throw new Error('Mobile filter could not be initialized.');
+      }
 
       sortSelect.addEventListener('change', sortGrid);
+      mobileSortToggle?.addEventListener('click', () => {
+        sortSelect.value = sortSelect.value === 'oldest' ? 'newest' : 'oldest';
+        sortGrid();
+      });
       renderGrid(trayController.getState().applied as Selection);
       sortGrid();
     }

@@ -1,0 +1,61 @@
+---
+import WorksFilter from './WorksFilter.astro';
+
+interface FilterProject {
+  id: string;
+  slug: string;
+  year?: number;
+  month?: number;
+  media: string;
+  type: string;
+  roles: string[];
+  techniques: string[];
+  context?: string;
+  scope?: string;
+  clientArtists: string[];
+  series?: string;
+}
+
+interface Props {
+  projects: FilterProject[];
+}
+
+const { projects } = Astro.props;
+---
+
+<dialog
+  id="mobile-filter-dialog"
+  class="mobile-filter-dialog"
+  aria-labelledby="mobile-filter-heading"
+  data-mobile-filter-dialog
+>
+  <div class="mobile-filter-sheet">
+    <header class="mobile-filter-header">
+      <h2 id="mobile-filter-heading">FILTER</h2>
+      <button type="button" data-mobile-filter-close>
+        <span aria-hidden="true">×</span> CLOSE
+      </button>
+    </header>
+
+    <div class="mobile-filter-content">
+      <WorksFilter projects={projects} instanceId="mobile" />
+    </div>
+
+    <footer class="mobile-filter-actions">
+      <div
+        class="mobile-filter-draft-tags"
+        aria-label="Draft selected filters"
+        aria-live="polite"
+        data-mobile-filter-draft-tags
+      ></div>
+      <div class="mobile-filter-action-buttons">
+        <button class="apply-button" type="button" data-mobile-filter-apply>
+          APPLY
+        </button>
+        <button class="mobile-clear-button" type="button" data-mobile-filter-clear>
+          CLEAR<br />ALL
+        </button>
+      </div>
+    </footer>
+  </div>
+</dialog>

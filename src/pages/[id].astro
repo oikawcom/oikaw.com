@@ -1,6 +1,8 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import FilterTray from '../components/FilterTray.astro';
+import MobileAppliedFilters from '../components/MobileAppliedFilters.astro';
+import MobileFilterDialog from '../components/MobileFilterDialog.astro';
 import WorksFilter from '../components/WorksFilter.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import {
@@ -123,7 +125,19 @@ if (
 
   <div class="detail-filter-toolbar sticky-filter-toolbar">
     <FilterTray context="detail" />
+    <button
+      class="mobile-filter-open-button"
+      type="button"
+      aria-haspopup="dialog"
+      aria-controls="mobile-filter-dialog"
+      aria-expanded="false"
+      data-mobile-filter-open
+    >
+      FILTER
+    </button>
   </div>
+
+  <MobileAppliedFilters />
 
   <article class="project-detail">
     <header class="project-heading project-content-container">
@@ -227,8 +241,14 @@ if (
     }
   </article>
 
+  <MobileFilterDialog projects={filterProjects} />
+
   <script>
     import { setupFilterTray } from '../lib/filter-tray.mjs';
+    import {
+      mobileLayoutMediaQuery,
+      setupMobileFilterUI,
+    } from '../lib/mobile-filter-ui.mjs';
     import { setupWorksFilter } from '../lib/works-filter-ui.mjs';
 
     type Selection = Record<string, string[]>;
@@ -237,6 +257,7 @@ if (
       ...document.querySelectorAll<HTMLButtonElement>('[data-detail-filter]'),
     ];
     let sidebarController: ReturnType<typeof setupWorksFilter>;
+    let mobileFilterController: ReturnType<typeof setupMobileFilterUI>;
 
     const updateDetailTags = (draft: Selection) => {
       for (const button of detailTags) {
@@ -253,6 +274,7 @@ if (
       onDraftChange: ({ draft }: { draft: Selection }) => {
         updateDetailTags(draft);
         sidebarController?.update(draft);
+        mobileFilterController?.renderDraft(draft);
       },
       onApply: () => window.location.assign('/works'),
     });
@@ -260,6 +282,10 @@ if (
     if (!trayController) throw new Error('Filter tray could not be initialized.');
     sidebarController = setupWorksFilter({ trayController });
     if (!sidebarController) throw new Error('Works filter could not be initialized.');
+    mobileFilterController = setupMobileFilterUI({ trayController });
+    if (!mobileFilterController) {
+      throw new Error('Mobile filter could not be initialized.');
+    }
 
     for (const button of detailTags) {
       button.addEventListener('click', () => {
@@ -267,6 +293,9 @@ if (
           button.dataset.category ?? '',
           button.dataset.value ?? '',
         );
+        if (window.matchMedia(mobileLayoutMediaQuery).matches) {
+          mobileFilterController?.open(button);
+        }
       });
     }
 
