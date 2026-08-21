@@ -986,6 +986,34 @@ h1 {
   resize: vertical;
 }
 
+.contact-honeypot {
+  display: none;
+}
+
+.contact-actions {
+  display: grid;
+  justify-items: center;
+}
+
+.contact-turnstile {
+  width: min(100%, 300px);
+  max-width: 100%;
+}
+
+.contact-turnstile.is-visible {
+  margin-bottom: 0.75rem;
+}
+
+.contact-status {
+  margin: 0;
+  color: #555;
+  font-size: 0.78rem;
+}
+
+.contact-status:not(:empty) {
+  margin-top: 0.75rem;
+}
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: #aaa;
@@ -1001,6 +1029,11 @@ h1 {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
 }
 
 .project-heading {

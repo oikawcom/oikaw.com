@@ -36,5 +36,9 @@
         "url": "https://linktr.ee/oikaw"
       }
     ]
+  },
+  "contact": {
+    "formspreeEndpoint": "https://formspree.io/f/xoearpkj",
+    "turnstileSiteKey": "0x4AAAAAAEXaTfJEWOp0sWps"
   }
 }

@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import siteContent from '../data/site.json';
 
-const { about } = siteContent;
+const { about, contact } = siteContent;
 ---
 
 <BaseLayout
@@ -62,13 +62,18 @@ const { about } = siteContent;
 
     <section class="contact-section" aria-labelledby="contact-heading">
       <h2 id="contact-heading">CONTACT</h2>
-      <form class="contact-form" data-contact-form>
+      <form
+        class="contact-form"
+        action={contact.formspreeEndpoint}
+        method="POST"
+        data-contact-form
+      >
         <fieldset>
           <legend>What's this about? *</legend>
           <div class="contact-reasons">
             {['Work / Project', 'Question / Request', 'Just a Message', 'Other'].map((label) => (
               <label>
-                <input type="radio" name="reason" value={label} required />
+                <input type="radio" name="What's this about?" value={label} required />
                 <span>{label}</span>
               </label>
             ))}
@@ -91,15 +96,139 @@ const { about } = siteContent;
           <textarea name="message" placeholder="Your message..." required></textarea>
         </label>
 
-        <button class="contact-submit" type="submit">Send Message</button>
+        <input
+          class="contact-honeypot"
+          type="text"
+          name="_gotcha"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+
+        <div class="contact-actions">
+          <div
+            class="contact-turnstile"
+            data-contact-turnstile
+            data-sitekey={contact.turnstileSiteKey}
+          ></div>
+          <button class="contact-submit" type="submit" data-contact-submit>Send Message</button>
+          <p class="contact-status" role="status" aria-live="polite" aria-atomic="true" data-contact-status></p>
+        </div>
       </form>
     </section>
   </article>
 
-  <script>
-    const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
-    form?.addEventListener('submit', (event) => {
-      event.preventDefault();
-    });
+  <script is:inline>
+    (() => {
+      const form = document.querySelector('[data-contact-form]');
+      const submitButton = document.querySelector('[data-contact-submit]');
+      const status = document.querySelector('[data-contact-status]');
+      const turnstileContainer = document.querySelector('[data-contact-turnstile]');
+      const turnstileSiteKey = turnstileContainer?.getAttribute('data-sitekey');
+
+      if (!form || !submitButton || !status || !turnstileContainer || !turnstileSiteKey) return;
+
+      const defaultButtonLabel = submitButton.textContent;
+      let isSubmitting = false;
+      let turnstileToken = '';
+      let widgetId;
+
+      const showStatus = (message, state) => {
+        status.textContent = message;
+        status.dataset.state = state;
+      };
+
+      const clearSecurityStatus = () => {
+        if (status.dataset.state === 'security') showStatus('', '');
+      };
+
+      const resetTurnstile = () => {
+        turnstileToken = '';
+        if (widgetId !== undefined && window.turnstile) {
+          window.turnstile.reset(widgetId);
+        }
+      };
+
+      window.onContactTurnstileLoad = () => {
+        if (!window.turnstile) return;
+
+        widgetId = window.turnstile.render(turnstileContainer, {
+          sitekey: turnstileSiteKey,
+          appearance: 'interaction-only',
+          size: turnstileContainer.clientWidth < 300 ? 'compact' : 'flexible',
+          callback: (token) => {
+            turnstileToken = token;
+            clearSecurityStatus();
+          },
+          'error-callback': () => {
+            turnstileToken = '';
+            showStatus('Couldn\u2019t verify. Please try again.', 'security');
+          },
+          'expired-callback': () => {
+            turnstileToken = '';
+          },
+          'timeout-callback': () => {
+            turnstileToken = '';
+            showStatus('Couldn\u2019t verify. Please try again.', 'security');
+          },
+          'before-interactive-callback': () => {
+            turnstileContainer.classList.add('is-visible');
+          },
+          'after-interactive-callback': () => {
+            turnstileContainer.classList.remove('is-visible');
+          },
+        });
+      };
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (isSubmitting) return;
+
+        const currentToken =
+          widgetId !== undefined && window.turnstile
+            ? window.turnstile.getResponse(widgetId)
+            : turnstileToken;
+
+        if (!currentToken) {
+          showStatus('Security check is still in progress. Please try again.', 'security');
+          return;
+        }
+
+        isSubmitting = true;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        showStatus('', '');
+
+        const formData = new FormData(form);
+        formData.set('cf-turnstile-response', currentToken);
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' },
+          });
+
+          if (!response.ok) throw new Error('Form submission failed');
+
+          form.reset();
+          resetTurnstile();
+          showStatus('Message sent.', 'success');
+        } catch {
+          resetTurnstile();
+          showStatus('Couldn\u2019t send. Please try again.', 'error');
+        } finally {
+          isSubmitting = false;
+          submitButton.disabled = false;
+          submitButton.textContent = defaultButtonLabel;
+        }
+      });
+    })();
   </script>
+  <script
+    is:inline
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onContactTurnstileLoad&render=explicit"
+    async
+    defer
+  ></script>
 </BaseLayout>
