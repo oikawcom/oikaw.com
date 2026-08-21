@@ -111,7 +111,9 @@ const { about, contact } = siteContent;
             data-contact-turnstile
             data-sitekey={contact.turnstileSiteKey}
           ></div>
-          <button class="contact-submit" type="submit" data-contact-submit>Send Message</button>
+          <button class="contact-submit" type="submit" data-contact-submit disabled>
+            Send Message
+          </button>
           <p class="contact-status" role="status" aria-live="polite" aria-atomic="true" data-contact-status></p>
         </div>
       </form>
@@ -125,8 +127,23 @@ const { about, contact } = siteContent;
       const status = document.querySelector('[data-contact-status]');
       const turnstileContainer = document.querySelector('[data-contact-turnstile]');
       const turnstileSiteKey = turnstileContainer?.getAttribute('data-sitekey');
+      const topicInputs = Array.from(
+        form?.querySelectorAll('.contact-reasons input[type="radio"]') ?? [],
+      );
+      const nameInput = form?.querySelector('.contact-fields input[type="text"]');
+      const emailInput = form?.querySelector('.contact-fields input[type="email"]');
+      const messageInput = form?.querySelector('textarea[name="message"]');
 
-      if (!form || !submitButton || !status || !turnstileContainer || !turnstileSiteKey) return;
+      if (
+        !form ||
+        !submitButton ||
+        !status ||
+        !turnstileContainer ||
+        !turnstileSiteKey ||
+        !nameInput ||
+        !emailInput ||
+        !messageInput
+      ) return;
 
       const defaultButtonLabel = submitButton.textContent;
       let isSubmitting = false;
@@ -136,6 +153,17 @@ const { about, contact } = siteContent;
       const showStatus = (message, state) => {
         status.textContent = message;
         status.dataset.state = state;
+      };
+
+      const requiredFieldsAreValid = () =>
+        topicInputs.some((input) => input.checked) &&
+        nameInput.value.trim().length > 0 &&
+        emailInput.value.trim().length > 0 &&
+        emailInput.validity.valid &&
+        messageInput.value.trim().length > 0;
+
+      const updateSubmitState = () => {
+        submitButton.disabled = isSubmitting || !requiredFieldsAreValid();
       };
 
       const clearSecurityStatus = () => {
@@ -148,6 +176,14 @@ const { about, contact } = siteContent;
           window.turnstile.reset(widgetId);
         }
       };
+
+      for (const input of topicInputs) {
+        input.addEventListener('change', updateSubmitState);
+      }
+      for (const input of [nameInput, emailInput, messageInput]) {
+        input.addEventListener('input', updateSubmitState);
+      }
+      updateSubmitState();
 
       window.onContactTurnstileLoad = () => {
         if (!window.turnstile) return;
@@ -183,6 +219,10 @@ const { about, contact } = siteContent;
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
         if (isSubmitting) return;
+        if (!requiredFieldsAreValid()) {
+          updateSubmitState();
+          return;
+        }
 
         const currentToken =
           widgetId !== undefined && window.turnstile
@@ -219,8 +259,8 @@ const { about, contact } = siteContent;
           showStatus('Couldn\u2019t send. Please try again.', 'error');
         } finally {
           isSubmitting = false;
-          submitButton.disabled = false;
           submitButton.textContent = defaultButtonLabel;
+          updateSubmitState();
         }
       });
     })();

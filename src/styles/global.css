@@ -1025,15 +1025,16 @@ h1 {
   padding: 0.45rem 1.2rem;
   border: 0;
   border-radius: 0;
-  background: #999;
+  background: #0a0a0a;
   color: #fff;
   font-weight: 700;
   cursor: pointer;
 }
 
 .contact-submit:disabled {
-  cursor: wait;
-  opacity: 0.65;
+  background: #bdbdbd;
+  cursor: not-allowed;
+  opacity: 1;
 }
 
 .project-heading {
@@ -1557,11 +1558,59 @@ figcaption {
   }
 
   .about-portrait {
+    width: min(72vw, 18.75rem);
     justify-self: center;
   }
 
+  .about-portrait img {
+    object-fit: contain;
+  }
+
+  .about-profile {
+    margin-bottom: 4rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .about-profile-copy {
+    display: grid;
+    min-width: 0;
+    gap: 2rem;
+  }
+
+  .about-profile-text {
+    min-height: 0;
+    margin-top: 0;
+  }
+
   .about-profile-heading {
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.45rem 1rem;
+  }
+
+  .about-profile-heading > div:first-child {
+    display: contents;
+  }
+
+  .about-profile-heading h1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .about-discipline {
+    margin-top: 0;
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .profile-language {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .contact-fields {
+    gap: 1.5rem;
   }
 
   .works-toolbar {
