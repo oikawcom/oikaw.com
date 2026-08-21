@@ -8,6 +8,9 @@
     "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
+    "media:scan": "node scripts/media/scan.mjs",
+    "media:plan": "node scripts/media/plan.mjs",
+    "media:test": "node --test scripts/media/tests/media.test.mjs",
     "verify:filters": "node scripts/verify-works-filter.mjs"
   },
   "engines": {

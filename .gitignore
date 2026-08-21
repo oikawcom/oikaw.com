@@ -14,3 +14,6 @@ dist/
 .DS_Store
 Thumbs.db
 *.swp
+
+# local media-ingestion sessions (never commit source inventories or reviews)
+.media-ingest/
